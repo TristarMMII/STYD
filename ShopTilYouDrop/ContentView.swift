@@ -14,7 +14,7 @@ struct ContentView: View {
                 
                 NavigationLink(destination: Login(), tag: 1, selection: self.$selection){}
 
-//                NavigationLink(destination: Register(), tag: 2, selection: self.$selection){}
+                NavigationLink(destination: Register(), tag: 2, selection: self.$selection){}
                 
                 Spacer()
                 
