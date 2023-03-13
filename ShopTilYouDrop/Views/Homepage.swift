@@ -82,8 +82,8 @@ struct Homepage: View {
         }
         .navigationTitle("Shop Till You Drop")
                     .navigationBarItems(trailing:
-                        NavigationLink(destination: Homepage()) {
-                            Image(systemName: "gear")
+                        NavigationLink(destination: Settings()) {
+                            Image(systemName: "gearshape.fill")
                         }
                     )
                     .navigationBarItems(leading:

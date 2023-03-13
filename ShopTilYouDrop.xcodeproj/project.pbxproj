@@ -15,6 +15,7 @@
 		C553C8E829B8E7590014AA98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C553C8E729B8E7590014AA98 /* ContentView.swift */; };
 		C553C8EA29B8E75B0014AA98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C553C8E929B8E75B0014AA98 /* Assets.xcassets */; };
 		C553C8ED29B8E75B0014AA98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C553C8EC29B8E75B0014AA98 /* Preview Assets.xcassets */; };
+		C5E8E5BF29BEA5500030CDA1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8E5BE29BEA5500030CDA1 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		C553C8E729B8E7590014AA98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C553C8E929B8E75B0014AA98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C553C8EC29B8E75B0014AA98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C5E8E5BE29BEA5500030CDA1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 				02234B4529BB4EEE000DDE48 /* Login.swift */,
 				02234B4729BB52CB000DDE48 /* Register.swift */,
 				02234B4929BB530D000DDE48 /* Homepage.swift */,
+				C5E8E5BE29BEA5500030CDA1 /* Settings.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				02234B4429BB461D000DDE48 /* Components.swift in Sources */,
 				C553C8E629B8E7590014AA98 /* ShopTilYouDropApp.swift in Sources */,
 				02234B4A29BB530D000DDE48 /* Homepage.swift in Sources */,
+				C5E8E5BF29BEA5500030CDA1 /* Settings.swift in Sources */,
 				02234B4629BB4EEE000DDE48 /* Login.swift in Sources */,
 				02234B4829BB52CB000DDE48 /* Register.swift in Sources */,
 			);
