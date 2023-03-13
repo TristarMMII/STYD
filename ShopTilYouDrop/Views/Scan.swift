@@ -11,6 +11,9 @@ struct Scan: View {
     var body: some View {
         VStack (spacing: 75){
 
+            Text("Shop Till You Drop")
+                .font(.title2)
+                .fontWeight(.bold)
             
             Text("Scan or select a photo")
                 .fontWeight(.bold)
@@ -52,7 +55,7 @@ struct Scan: View {
                 
             }.padding(-50)
             
-        }.offset(y: 20)
+        }.offset(y: 0)
     }
 }
 
