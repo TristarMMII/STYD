@@ -120,8 +120,8 @@ struct Homepage: View {
         }
         
                     .navigationBarItems(trailing:
-                        NavigationLink(destination: Homepage()) {
-                            Image(systemName: "gear")
+                        NavigationLink(destination: Settings()) {
+                            Image(systemName: "gearshape.fill")
                         }
                     )
         
