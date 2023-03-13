@@ -115,8 +115,6 @@ struct Homepage: View {
             }
             
             
-            
-            
         }
         
                     .navigationBarItems(trailing:
@@ -134,7 +132,6 @@ struct Homepage: View {
                             }
                         }) {
                             Image(systemName: "person.crop.circle.fill")
-                                .foregroundColor(.black)
                         }
                     )
                     .onAppear {
