@@ -11,74 +11,79 @@ struct Search: View {
     
     @State private var productList = ["test","test","test","test","test","test"]
     @State private var searchProduct : String = ""
+    @State private var selection : Int? = nil
+    @State private var selectedIndex : Int = -1
     
     var body: some View {
-        VStack{
-            
+        NavigationView{
             VStack{
-                HStack{
-                    Text("Product Search")
-                        .font(.largeTitle)
-                        .bold()
-                    Image(systemName: "magnifyingglass")
-                        .font(.title2)
-                }
-            }
-            
-            Group{
-
-                HStack{
-                    TextField("Enter Product", text: $searchProduct)
-                        .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 16)
-                                    .stroke(.blue, lineWidth: 3)
-                                    
-                            )
-                        .frame(width:  UIScreen.main.bounds.width - 100)
-                        .disableAutocorrection(true)
-                        .textInputAutocapitalization(.words)
-                    
-                    Button(action:{
-                        
-                    }){
-                        Image(systemName: "line.3.horizontal.decrease.circle.fill")
-                            .font(.title)
+                
+                NavigationLink(destination: ProductCompair(), tag : 1, selection: self.$selection ){}
+                
+                VStack{
+                    HStack{
+                        Text("Product Search")
+                            .font(.largeTitle)
+                            .bold()
+                        Image(systemName: "magnifyingglass")
+                            .font(.title2)
                     }
                 }
+                
+                Group{
 
-                Divider()
-            }
-            
-            List{
-                ForEach (productList.enumerated().map({$0}), id: \.element.self){index , currentProduct in
-                    VStack{
+                    HStack{
+                        TextField("Enter Product", text: $searchProduct)
+                            .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 16)
+                                        .stroke(.blue, lineWidth: 3)
+                                        
+                                )
+                            .frame(width:  UIScreen.main.bounds.width - 100)
+                            .disableAutocorrection(true)
+                            .textInputAutocapitalization(.words)
                         
-                        
-                        HStack{
-                            Text(currentProduct)
-                                .bold()
+                        Button(action:{
                             
-                            Spacer()
-                            
-                            Button(action : {
-                                
-                            }){
-                                Text("Compair")
-                                    .foregroundColor(.white)
-                                    .padding(10)
-                            }
-                            .background(Color.blue)
-                            .cornerRadius(10)
-                        
+                        }){
+                            Image(systemName: "line.3.horizontal.decrease.circle.fill")
+                                .font(.title)
                         }
-                        
+                    }
+
+                    Divider()
+                }
+                
+                List{
+                    ForEach (productList.enumerated().map({$0}), id: \.element.self){index , currentProduct in
+                        VStack{
+                            
+                            
+                            HStack{
+                                Text(currentProduct)
+                                    .bold()
+                                
+                                Spacer()
+                                
+                                Button(action : {
+                                    self.selectedIndex = index
+                                    self.selection = 1
+                                }){
+                                    Text("Compare")
+                                        .foregroundColor(.white)
+                                        .padding(10)
+                                }
+                                .background(Color.blue)
+                                .cornerRadius(10)
+                            
+                            }
+                            
+                        }
                     }
                 }
             }
         }
-        
-        
     }
 }
 
