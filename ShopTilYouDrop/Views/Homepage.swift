@@ -8,61 +8,19 @@
 import SwiftUI
 
 struct Homepage: View {
+    
+    
     var body: some View {
         
         NavigationView {
             
-            TabView {
+            TabView() {
                 
-                VStack (spacing: 75){
-
-                    
-                    Text("Scan or select a photo")
-                        .fontWeight(.bold)
-                        .font(.largeTitle)
-                        .underline()
-                    
-                    Image("photo")
-                        .resizable()
-                        .frame(width: 175, height: 175)
-                        .overlay(
-                            Rectangle()
-                                .stroke(Color.black, lineWidth: 2)
-                                .padding(-50)
-                        )
-                    
-                    
-                    
-                    Button(action: {
-                        
-                    }){
-                        Text("SCAN")
-                            .modifier(CustomTextM(fontName: "MavenPro-Bold", fontSize: 16, fontColor: Color.white))
-                        
-                            .frame(maxWidth: 280)
-                            .frame(height: 56, alignment: .leading)
-                            .background(Color.blue)
-                            .cornerRadius(7)
-                    }
-                    
-                    HStack {
-                        
-                        Image("photo")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                        
-                        Text("Select Photo")
-                        
-                    }.onTapGesture {
-                        
-                    }.padding(-50)
-                    
-                }.offset(y: 20)
-                
+                Scan()
                     .tabItem {
                         Image(systemName: "camera.fill")
                         Text("Scan")
-                
+                        
                     }
                 
                 Text("Search")
@@ -71,11 +29,15 @@ struct Homepage: View {
                         Text("Search")
                     }
                 
-                Text("Saved")
+                Saved()
                     .tabItem {
                         Image(systemName: "heart.fill")
                         Text("Saved")
+                        
                     }
+                
+                    
+                
             }
             
             
@@ -86,6 +48,7 @@ struct Homepage: View {
                             Image(systemName: "gear")
                         }
                     )
+        
                     .navigationBarItems(leading:
                         NavigationLink(destination: Homepage()) {
                             Image(systemName: "person.crop.circle.fill")
