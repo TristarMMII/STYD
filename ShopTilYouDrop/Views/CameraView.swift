@@ -9,7 +9,7 @@ import SwiftUI
 import AVFoundation
 
 struct CameraView: View {
-
+    
     @StateObject var camera = CameraModel()
     
     var body: some View {
@@ -70,7 +70,7 @@ struct CameraView: View {
                     }
                 }//hstack
                 .frame(height: 80)
-
+                
             }//vstack
         }//zstack
         .onAppear(perform: {
@@ -123,30 +123,61 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     
     func SetUp(){
         //set up camera
-        do{
-            //setting congifs
-            self.session.beginConfiguration()
-            
-            //depends on device (.builtindualcamera has multiple options depending on the iphone model)
-            let device = AVCaptureDevice.default(.builtInTripleCamera, for: .video, position: .back)
-            
-            let input = try AVCaptureDeviceInput(device: device!)
-            
-            //check and add to session
-            if self.session.canAddInput(input){
-                self.session.addInput(input)
+        //        do{
+        //setting congifs
+        self.session.beginConfiguration()
+        
+        //depends on device (.builtindualcamera has multiple options depending on the iphone model)
+        if let device = AVCaptureDevice.default(.builtInTripleCamera, for: .video, position: .back){
+            do{
+                let input = try AVCaptureDeviceInput(device: device)
+                
+                //check and add to session
+                if self.session.canAddInput(input){
+                    self.session.addInput(input)
+                }
+                
+                //output
+                if self.session.canAddOutput(self.output){
+                    self.session.addOutput(self.output)
+                }
+                
+                self.session.commitConfiguration()
             }
-            
-            //output
-            if self.session.canAddOutput(self.output){
-                self.session.addOutput(self.output)
+            catch {
+                print("error")
             }
-            
-            self.session.commitConfiguration()
-            
-        }catch{
-            print(error.localizedDescription)
         }
+        else if let deviceDual = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back){
+            do{
+                let input = try AVCaptureDeviceInput(device: deviceDual)
+                
+                //check and add to session
+                if self.session.canAddInput(input){
+                    self.session.addInput(input)
+                }
+                
+                //output
+                if self.session.canAddOutput(self.output){
+                    self.session.addOutput(self.output)
+                }
+                
+                self.session.commitConfiguration()
+            }
+            catch {
+                print("error")
+            }
+        }else {
+            print("camera not available")
+        }
+        
+        
+        
+        
+        
+        //    }catch{
+        //        print(error.localizedDescription)
+        //    }
     }
     
     //take and retake
@@ -190,15 +221,18 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     }
     
     func SaveOutput(){
-        let image = UIImage(data: self.picData)!
+        if let image = UIImage(data: self.picData){
+            //save image
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            
+            self.isSaved = true
+            
+            print("Save Successful")
+        }
         
-        //save image
         
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         
-        self.isSaved = true
         
-        print("Save Successful")
     }
 }
 
