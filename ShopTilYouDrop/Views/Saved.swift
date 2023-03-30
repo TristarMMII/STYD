@@ -35,6 +35,21 @@ struct Saved: View {
            }
        }
     
+    func removeItems(at offsets: IndexSet) {
+        self.items.remove(atOffsets: offsets)
+        
+        guard let userId = Auth.auth().currentUser?.uid else {
+            print("Error: User is not signed in.")
+            return
+        }
+        
+        let data = ["Wishlist": self.items]
+        Firestore.firestore().collection("UserData").document(userId).setData(data, merge: true) { error in
+            if let error = error {
+                print("Error updating document: \(error.localizedDescription)")
+            }
+        }
+    }
 
     
     var body: some View {
@@ -52,19 +67,15 @@ struct Saved: View {
                 
             }
             
-            List (items, id: \.self) { item in
-                    HStack{
-                        Image(systemName: "iphone.gen3")
-                        Text("\(item) ")
-                        Spacer()
-                        Image(systemName: "heart.fill")
+            List {
+                    ForEach(items.indices, id: \.self) { index in
+                        Text(items[index])
                     }
+                    .onDelete(perform: removeItems)
                 }
-            
-            
-            .onAppear(){
-                fetchItems()
-            }
+                .onAppear {
+                    fetchItems()
+                }
             
             
         }
