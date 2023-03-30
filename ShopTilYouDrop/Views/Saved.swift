@@ -6,30 +6,43 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
+
 
 struct Saved: View {
     
-    let items = [
-            "Nintendo Switch",
-            "PS5",
-            "Xbox Series X",
-            "Samsung Galaxy S21",
-            "Ring Doorbell",
-            "Roomba",
-            "Sony PlayStation VR",
-            "Honeywell Thermostat",
-            "Fitbit Charge",
-            "Bose Headphones",
-            "Nest Hello Doorbell"
-        ]
+   @State var items : [String] = []
+    
+    func fetchItems() {
+        guard let userId = Auth.auth().currentUser?.uid else {
+            print("Error: User is not signed in.")
+            return
+        }
+        
+        Firestore.firestore().collection("UserData").getDocuments { snapshot, error in
+               if let documents = snapshot?.documents {
+                   self.items = []
+                   for document in documents {
+                       let documentId = document.documentID
+                       if documentId == userId, let items = document.data()["Wishlist"] as? [String] {
+                           self.items += items
+                       }
+                   }
+               } else if let error = error {
+                   print("Error fetching documents: \(error.localizedDescription)")
+               }
+           }
+       }
+    
+
     
     var body: some View {
         
         VStack{
             
             HStack{
-                
-                
+
                 Text("Wishlist")
                     .fontWeight(.bold)
                     .font(.largeTitle)
@@ -39,8 +52,7 @@ struct Saved: View {
                 
             }
             
-            List {
-                ForEach(items, id: \.self) { item in
+            List (items, id: \.self) { item in
                     HStack{
                         Image(systemName: "iphone.gen3")
                         Text("\(item) ")
@@ -48,6 +60,10 @@ struct Saved: View {
                         Image(systemName: "heart.fill")
                     }
                 }
+            
+            
+            .onAppear(){
+                fetchItems()
             }
             
             

@@ -11,8 +11,8 @@ import FirebaseAuth
 
 struct Register: View {
     
-    @State var email: String = ""
-    @State var password: String = ""
+    @State var email: String = "Test123@gmail.com"
+    @State var password: String = "123456"
     @State private var selection: Int? = nil
     @State private var userLoggedIn = false
     @State private var showingAlert = false
@@ -90,22 +90,26 @@ struct Register: View {
     }
     
     func register(){
+        
         Auth.auth().createUser(withEmail: email, password: password){result, error in
             if error != nil {
                 showingAlert = true
                 msg = error!.localizedDescription
             } else {
+                Firestore.firestore().collection("UserData").document(Auth.auth().currentUser!.uid).setData(["Wishlist": ""])
                 self.selection = 1
             }
             
-            
         }
+    
+        
+    }
         
     
         
     }
     
-}
+
 
 
 

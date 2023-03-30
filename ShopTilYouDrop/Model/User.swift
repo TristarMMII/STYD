@@ -11,10 +11,10 @@ import Foundation
 
 class User: Identifiable{
     
-    var wishList: [String]
+    var wishList: String = ""
     
     
-    init(wishList: [String]){
+    init(wishList: String){
         self.wishList = wishList
     }
     
