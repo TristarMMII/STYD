@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 struct Register: View {
     
-    @State var email: String = "Test@gmail.com"
-    @State var password: String = "123456"
+    @State var email: String = ""
+    @State var password: String = ""
     @State private var selection: Int? = nil
     @State private var userLoggedIn = false
     @State private var showingAlert = false
@@ -50,9 +52,10 @@ struct Register: View {
                     }
                 }
                 
-                // SignIn
+                // SignUp
                 Button(action: {
-                    self.selection = 1
+                    register()
+                    
                 }){
                     Text("Sign Up")
                         .modifier(CustomTextM(fontName: "MavenPro-Bold", fontSize: 16, fontColor: Color.white))
@@ -84,6 +87,22 @@ struct Register: View {
             .padding(.horizontal,30)
             .padding(.vertical, 25)
 
+    }
+    
+    func register(){
+        Auth.auth().createUser(withEmail: email, password: password){result, error in
+            if error != nil {
+                showingAlert = true
+                msg = error!.localizedDescription
+            } else {
+                self.selection = 1
+            }
+            
+            
+        }
+        
+    
+        
     }
     
 }

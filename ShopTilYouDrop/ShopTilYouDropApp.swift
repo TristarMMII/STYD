@@ -5,13 +5,25 @@
 //  Created by Nichoalas Cammisuli on 2023-03-08.
 //
 
+import Firebase
+import FirebaseFirestore
 import SwiftUI
+
 
 @main
 struct ShopTilYouDropApp: App {
+    
+    let fireDBHelper = FireDBHelper()
+    
+    init() {
+        FirebaseApp.configure()
+//        fireDBHelper = FireDBHelper(database: Firestore.firestore())
+    }
+    
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(fireDBHelper)
         }
     }
 }
