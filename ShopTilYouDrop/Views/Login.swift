@@ -1,10 +1,12 @@
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
     struct Login: View {
         
-        @State var email: String = "Test@gmail.com"
-        @State var password: String = "123456"
+        @State var email: String = ""
+        @State var password: String = ""
         @State private var selection: Int? = nil
         @State private var userLoggedIn = false
         @State private var showingAlert = false
@@ -47,7 +49,7 @@ import SwiftUI
                     
                     // SignIn
                     Button(action: {
-                        self.selection = 2
+                        login()
                     }){
                         Text("Sign In")
                             .modifier(CustomTextM(fontName: "MavenPro-Bold", fontSize: 16, fontColor: Color.white))
@@ -78,7 +80,26 @@ import SwiftUI
                 .navigationBarBackButtonHidden(true)
                 .padding(.horizontal,30)
                 .padding(.vertical, 25)
+                .onAppear {
+                    Auth.auth().addStateDidChangeListener{auth, user in
+                        if user != nil {
+                            userLoggedIn.toggle()
+                        }
+                    }
+                }
+            
 
+        }
+        
+        func login(){
+            Auth.auth().signIn(withEmail: email, password: password){result, error in
+                if error != nil {
+                    showingAlert = true
+                    msg = error!.localizedDescription
+                } else {
+                    self.selection = 2
+                }
+            }
         }
         
     }
