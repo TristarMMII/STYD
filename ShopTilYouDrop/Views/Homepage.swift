@@ -30,7 +30,7 @@ struct Homepage: View {
                             
                         }
                     
-                    Text("Search")
+                    Search()
                         .tabItem {
                             Image(systemName: "magnifyingglass")
                             Text("Search")
@@ -115,13 +115,11 @@ struct Homepage: View {
             }
             
             
-            
-            
         }
         
                     .navigationBarItems(trailing:
-                        NavigationLink(destination: Homepage()) {
-                            Image(systemName: "gear")
+                        NavigationLink(destination: Settings()) {
+                            Image(systemName: "gearshape.fill")
                         }
                     )
         
@@ -134,7 +132,6 @@ struct Homepage: View {
                             }
                         }) {
                             Image(systemName: "person.crop.circle.fill")
-                                .foregroundColor(.black)
                         }
                     )
                     .onAppear {

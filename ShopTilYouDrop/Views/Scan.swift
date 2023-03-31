@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct Scan: View {
     var body: some View {
         VStack (spacing: 75){
