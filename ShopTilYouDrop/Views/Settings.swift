@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 struct Settings: View {
     @State private var notiOn = true
+    @State private var selection: Int? = nil
     
     var body: some View {
         VStack{
+            
+            NavigationLink(destination: Login(), tag: 1, selection: self.$selection){}
             
             VStack{
                 Image(systemName: "gearshape.fill")
@@ -46,7 +51,7 @@ struct Settings: View {
             }//Rate app button
             
             Button(action:{
-                
+               signOut()
             }){
                Text("Sign Out")
                     .bold()
@@ -62,6 +67,16 @@ struct Settings: View {
             Spacer()
         }//vstack
     }//body
+    
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+            selection = 1
+        } catch let error as NSError {
+            print("Error signing out: \(error.localizedDescription)")
+        }
+    }
+    
 }//main view
 
 struct Settings_Previews: PreviewProvider {
