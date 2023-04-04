@@ -31,8 +31,8 @@ struct Scan: View {
                 .font(.largeTitle)
                 .underline()
             
-            if let image = selectedImage {
-                Image(uiImage: image)
+            if let inputImage = selectedImage {
+                Image(uiImage: inputImage)
                     .resizable()
                     .frame(width: 175, height: 175)
                     .overlay(
@@ -90,21 +90,28 @@ struct Scan: View {
         config.filter = .images
         config.selectionLimit = 1
         
-        let picker = PHPickerViewController(configuration: config)
+//        let picker = PHPickerViewController(configuration: config)
+        
+        let picker = UIImagePickerController()
+        
 //        coordinator = Coordinator(self)
-        picker.delegate = Coordinator(self)
+        
+//        coordinator = Coordinator(self)
+//        picker.delegate = coordinator
+        picker.delegate = Coordinator(self) as? any UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        picker.allowsEditing = true
+        picker.sourceType = .photoLibrary
         //        UIApplication.shared.windows.first?.rootViewController?.present(vc, animated: true)
-        if let topWindow = UIApplication.shared.connectedScenes
-            .compactMap({ $0 as? UIWindowScene })
-            .flatMap({ $0.windows })
-            .first(where: { $0.isKeyWindow }) {
-            topWindow.rootViewController?.present(picker, animated: true)
-        }
+        DispatchQueue.main.async {
+            if let topWindow = UIApplication.shared.connectedScenes
+                .compactMap({ $0 as? UIWindowScene })
+                .flatMap({ $0.windows })
+                .first(where: { $0.isKeyWindow }) {
+                topWindow.rootViewController?.present(picker, animated: true)
+            }
+            }
     }
     
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(self)
-    }
 
     class Coordinator: NSObject, PHPickerViewControllerDelegate {
         var parent: Scan
@@ -114,20 +121,36 @@ struct Scan: View {
         }
         
         func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-            picker.dismiss(animated: true, completion: nil)
-            guard let itemProvider = results.first?.itemProvider else {
-                return
-            }
-            if itemProvider.canLoadObject(ofClass: UIImage.self) {
-                itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
-                    if let image = image as? UIImage {
-                        DispatchQueue.main.async {
-                            self?.parent.selectedImage = image
+//            picker.dismiss(animated: true, completion: nil)
+            print("TESTING")
+            
+            func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+                        if let uiImage = info[.editedImage] as? UIImage {
+                            parent.selectedImage = uiImage
+                        } else if let uiImage = info[.originalImage] as? UIImage {
+                            parent.selectedImage = uiImage
+                            
                         }
+                        picker.dismiss(animated: true)
                     }
-                }
-            }
         }
+
+        
+//        func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+//            picker.dismiss(animated: true, completion: nil)
+//            guard let itemProvider = results.first?.itemProvider else {
+//                return
+//            }
+//            if itemProvider.canLoadObject(ofClass: UIImage.self) {
+//                itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
+//                    if let image = image as? UIImage {
+//                        DispatchQueue.main.async {
+//                            self?.parent.selectedImage = image
+//                        }
+//                    }
+//                }
+//            }
+//        }
     }
 
         
