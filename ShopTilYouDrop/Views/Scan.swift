@@ -9,7 +9,12 @@ import SwiftUI
 
 
 struct Scan: View {
+    
+    @State private var selection: Int? = nil
+    
     var body: some View {
+        
+        
         VStack (spacing: 75){
 
             Text("Shop Till You Drop")
@@ -31,9 +36,11 @@ struct Scan: View {
                 )
             
             
+            NavigationLink(destination: CameraView(), tag: 1, selection: self.$selection){}
+            
             
             Button(action: {
-                
+                selection = 1
             }){
                 Text("SCAN")
                     .modifier(CustomTextM(fontName: "MavenPro-Bold", fontSize: 16, fontColor: Color.white))
