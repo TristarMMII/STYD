@@ -123,7 +123,7 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     
     func SetUp(){
         //set up camera
-        //        do{
+        
         //setting congifs
         self.session.beginConfiguration()
         
@@ -170,14 +170,6 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
         }else {
             print("camera not available")
         }
-        
-        
-        
-        
-        
-        //    }catch{
-        //        print(error.localizedDescription)
-        //    }
     }
     
     //take and retake
@@ -229,10 +221,6 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
             
             print("Save Successful")
         }
-        
-        
-        
-        
     }
 }
 
