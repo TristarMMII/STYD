@@ -14,6 +14,7 @@ import SwiftUI
 struct ShopTilYouDropApp: App {
     
     let fireDBHelper = FireDBHelper()
+    let fetcher = WeatherHelper()
     
     init() {
         FirebaseApp.configure()
@@ -23,7 +24,7 @@ struct ShopTilYouDropApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(fireDBHelper)
+            APICall().environmentObject(fireDBHelper).environmentObject(fetcher)
         }
     }
 }
