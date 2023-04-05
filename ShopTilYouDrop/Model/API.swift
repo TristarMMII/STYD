@@ -10,7 +10,7 @@ import UIKit
 
 
 
-struct APIResponse: Codable{
+struct Product: Codable{
         
     let search_results: [Search_results]
     

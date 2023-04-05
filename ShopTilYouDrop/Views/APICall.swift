@@ -2,11 +2,11 @@ import SwiftUI
 
 struct APICall: View {
     
-    @EnvironmentObject var fetcher: WeatherHelper
+    @EnvironmentObject var productDataQuery: ProductQueryController
     
     var body: some View {
             NavigationView {
-                List(fetcher.weather.search_results, id: \.title) { searchResult in
+                List(productDataQuery.productDataQuery.search_results, id: \.title) { searchResult in
                     Text(searchResult.title)
                 }
                 .navigationBarTitle("Product List")

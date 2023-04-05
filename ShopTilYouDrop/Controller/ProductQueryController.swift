@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class WeatherHelper : ObservableObject{
+class ProductQueryController : ObservableObject{
     
-    @Published var weather = APIResponse()
+    @Published var productDataQuery = Product()
     
     init() {
         self.fetchDataFromAPI()
@@ -44,11 +44,11 @@ class WeatherHelper : ObservableObject{
                                     if let jsonData = data {
                                         
     
-                                        let decodedWeatherList = try JSONDecoder().decode(APIResponse.self, from: jsonData)
+                                        let decodedData = try JSONDecoder().decode(Product.self, from: jsonData)
                                         
                                         
                                         DispatchQueue.main.async {
-                                            self.weather = decodedWeatherList
+                                            self.productDataQuery = decodedData
                                             
                                         }
 
