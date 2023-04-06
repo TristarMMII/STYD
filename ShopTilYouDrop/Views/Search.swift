@@ -75,6 +75,7 @@ struct Search: View {
                                     self.isLoading = false
                                 case .failure(let error):
                                     print("Error fetching product data: \(error)")
+                                    
                                     self.isLoading = false
                                 }
                             }
@@ -153,6 +154,7 @@ struct Search: View {
                                                     
                                                 case .failure(let error):
                                                     print("Error fetching product data: \(error)")
+                                                    productList.remove(at: index)
                                                 }
                                             }
 
