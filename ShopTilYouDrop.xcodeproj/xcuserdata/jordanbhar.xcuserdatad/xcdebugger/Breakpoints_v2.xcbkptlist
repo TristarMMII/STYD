@@ -23,182 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3AF26EBD-ADDC-49B2-B88E-08FE5ED5B652"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "fetchDataFromAPI(product:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3AF26EBD-ADDC-49B2-B88E-08FE5ED5B652 - 73f08af50fc78e58"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ShopTilYouDrop.ProductQueryController.fetchDataFromAPI(product: Swift.String) -&gt; ()"
-                  moduleName = "ShopTilYouDrop"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Controller/ProductQueryController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "798">
-               </Location>
-               <Location
-                  uuid = "3AF26EBD-ADDC-49B2-B88E-08FE5ED5B652 - b52d17af4c6f6839"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ShopTilYouDrop.ProductQueryController.fetchDataFromAPI(product: Swift.String) -&gt; ()"
-                  moduleName = "ShopTilYouDrop"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Controller/ProductQueryController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "28"
-                  endingLineNumber = "28"
-                  offsetFromSymbolStart = "347">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "95C2EE90-C472-4A6A-987D-7282C8FE24A0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "fetchDataFromAPI(product:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3F830310-E696-4CE9-807B-75AD69140E19"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "fetchDataFromAPI(product:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3F830310-E696-4CE9-807B-75AD69140E19 - 73f08af50fc78d82"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ShopTilYouDrop.ProductQueryController.fetchDataFromAPI(product: Swift.String) -&gt; ()"
-                  moduleName = "ShopTilYouDrop"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Controller/ProductQueryController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "440">
-               </Location>
-               <Location
-                  uuid = "3F830310-E696-4CE9-807B-75AD69140E19 - 73f08af50fc78d82"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ShopTilYouDrop.ProductQueryController.fetchDataFromAPI(product: Swift.String) -&gt; ()"
-                  moduleName = "ShopTilYouDrop"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Controller/ProductQueryController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "795">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0B1EDA16-D6B5-4CB1-9FF4-F0CC8A52AD6D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "fetchDataFromAPI(product:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "016F578E-789D-4D55-98A2-97B482FC3D37"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "fetchDataFromAPI(product:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7192D13E-F57E-41CD-A691-58067F3DFD3F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "fetchDataFromAPI(product:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F550B1E8-A44C-4F52-8C24-28D9A46C8D30"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "fetchDataFromAPI(product:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D34AF9A1-F481-46E9-B843-45D993920E0F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -362,10 +186,10 @@
             filePath = "ShopTilYouDrop/Views/Search.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   uuid = "EDC09964-8480-4253-B878-5494FFC55A81 - 911a202116b9927b"
@@ -404,14 +228,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "745C237E-18DE-487E-A25D-856FCCB71BF5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "getSpecificProductData(index:)"
             landmarkType = "7">
          </BreakpointContent>
