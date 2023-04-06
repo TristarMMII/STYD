@@ -24,23 +24,23 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3AF26EBD-ADDC-49B2-B88E-08FE5ED5B652"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "fetchDataFromAPI(product:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "3AF26EBD-ADDC-49B2-B88E-08FE5ED5B652 - 7938b7d9ade9587a"
+                  uuid = "3AF26EBD-ADDC-49B2-B88E-08FE5ED5B652 - 73f08af50fc78e58"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ShopTilYouDrop.ProductQueryController.fetchDataFromAPI() -&gt; ()"
+                  symbolName = "ShopTilYouDrop.ProductQueryController.fetchDataFromAPI(product: Swift.String) -&gt; ()"
                   moduleName = "ShopTilYouDrop"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Controller/ProductQueryController.swift"
@@ -48,14 +48,14 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
                   endingLineNumber = "25"
-                  offsetFromSymbolStart = "471">
+                  offsetFromSymbolStart = "798">
                </Location>
                <Location
-                  uuid = "3AF26EBD-ADDC-49B2-B88E-08FE5ED5B652 - 4551192b433f721e"
+                  uuid = "3AF26EBD-ADDC-49B2-B88E-08FE5ED5B652 - b52d17af4c6f6839"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ShopTilYouDrop.ProductQueryController.fetchDataFromAPI() -&gt; ()"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ShopTilYouDrop.ProductQueryController.fetchDataFromAPI(product: Swift.String) -&gt; ()"
                   moduleName = "ShopTilYouDrop"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Controller/ProductQueryController.swift"
@@ -72,14 +72,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "95C2EE90-C472-4A6A-987D-7282C8FE24A0"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "fetchDataFromAPI(product:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -88,23 +88,23 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3F830310-E696-4CE9-807B-75AD69140E19"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "fetchDataFromAPI(product:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "3F830310-E696-4CE9-807B-75AD69140E19 - 7938b7d9ade95ba0"
+                  uuid = "3F830310-E696-4CE9-807B-75AD69140E19 - 73f08af50fc78d82"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ShopTilYouDrop.ProductQueryController.fetchDataFromAPI() -&gt; ()"
+                  symbolName = "ShopTilYouDrop.ProductQueryController.fetchDataFromAPI(product: Swift.String) -&gt; ()"
                   moduleName = "ShopTilYouDrop"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Controller/ProductQueryController.swift"
@@ -112,14 +112,14 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "363">
+                  offsetFromSymbolStart = "440">
                </Location>
                <Location
-                  uuid = "3F830310-E696-4CE9-807B-75AD69140E19 - 7938b7d9ade95ba0"
+                  uuid = "3F830310-E696-4CE9-807B-75AD69140E19 - 73f08af50fc78d82"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ShopTilYouDrop.ProductQueryController.fetchDataFromAPI() -&gt; ()"
+                  symbolName = "ShopTilYouDrop.ProductQueryController.fetchDataFromAPI(product: Swift.String) -&gt; ()"
                   moduleName = "ShopTilYouDrop"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Controller/ProductQueryController.swift"
@@ -127,7 +127,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "19"
                   endingLineNumber = "19"
-                  offsetFromSymbolStart = "468">
+                  offsetFromSymbolStart = "795">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -135,40 +135,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5F3F5B8C-291C-4DD2-928F-27E264E95F2F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ShopTilYouDrop/Views/Search.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "0B1EDA16-D6B5-4CB1-9FF4-F0CC8A52AD6D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "fetchDataFromAPI(product:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "016F578E-789D-4D55-98A2-97B482FC3D37"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
@@ -183,15 +151,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7192D13E-F57E-41CD-A691-58067F3DFD3F"
-            shouldBeEnabled = "Yes"
+            uuid = "016F578E-789D-4D55-98A2-97B482FC3D37"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "fetchDataFromAPI(product:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7192D13E-F57E-41CD-A691-58067F3DFD3F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "fetchDataFromAPI(product:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -200,15 +184,235 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F550B1E8-A44C-4F52-8C24-28D9A46C8D30"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "fetchDataFromAPI(product:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D34AF9A1-F481-46E9-B843-45D993920E0F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShopTilYouDrop/Views/ProductCompair.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "ProductCompair"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "D34AF9A1-F481-46E9-B843-45D993920E0F - b36e13a4b66ec425"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of ShopTilYouDrop.ProductCompair.productObject : ShopTilYouDrop.Product"
+                  moduleName = "ShopTilYouDrop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Views/ProductCompair.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "34">
+               </Location>
+               <Location
+                  uuid = "D34AF9A1-F481-46E9-B843-45D993920E0F - fde1a861f1c6d525"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShopTilYouDrop.ProductCompair.productObject.getter : ShopTilYouDrop.Product"
+                  moduleName = "ShopTilYouDrop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Views/ProductCompair.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  uuid = "D34AF9A1-F481-46E9-B843-45D993920E0F - 53346854619cad11"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShopTilYouDrop.ProductCompair.productObject.setter : ShopTilYouDrop.Product"
+                  moduleName = "ShopTilYouDrop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Views/ProductCompair.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "239">
+               </Location>
+               <Location
+                  uuid = "D34AF9A1-F481-46E9-B843-45D993920E0F - 9508a5fafc787726"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShopTilYouDrop.ProductCompair.productObject.modify : ShopTilYouDrop.Product"
+                  moduleName = "ShopTilYouDrop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Views/ProductCompair.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "D34AF9A1-F481-46E9-B843-45D993920E0F - 3a1638f5940a13cd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShopTilYouDrop.ProductCompair.productObject.modify : ShopTilYouDrop.Product with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ShopTilYouDrop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Views/ProductCompair.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "66">
+               </Location>
+               <Location
+                  uuid = "D34AF9A1-F481-46E9-B843-45D993920E0F - 75b7be7c6eb89b69"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ShopTilYouDrop.ProductCompair.$productObject.getter : SwiftUI.Binding&lt;ShopTilYouDrop.Product&gt;"
+                  moduleName = "ShopTilYouDrop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Views/ProductCompair.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "418">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34A9DF91-E00C-4505-BDF5-830E698C1E30"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShopTilYouDrop/Views/ProductCompair.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "34A9DF91-E00C-4505-BDF5-830E698C1E30 - 774caa54ed17f908"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;ShopTilYouDrop.Product.Search_Result&gt;, Swift.String, SwiftUI.Text&gt; in closure #3 () -&gt; SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;ShopTilYouDrop.Product.Search_Result&gt;, Swift.String, SwiftUI.Text&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Divider)&gt;&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Image)&gt;&gt;, SwiftUI.VStack&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;ShopTilYouDrop.Product.Search_Result&gt;, Swift.String, SwiftUI.Text&gt;&gt;&gt;)&gt; in ShopTilYouDrop.ProductCompair.body.getter : some"
+                  moduleName = "ShopTilYouDrop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Views/ProductCompair.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "167">
+               </Location>
+               <Location
+                  uuid = "34A9DF91-E00C-4505-BDF5-830E698C1E30 - 3cae48575e6c34c0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ShopTilYouDrop.Product.Search_Result) -&gt; SwiftUI.Text in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;ShopTilYouDrop.Product.Search_Result&gt;, Swift.String, SwiftUI.Text&gt; in closure #3 () -&gt; SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;ShopTilYouDrop.Product.Search_Result&gt;, Swift.String, SwiftUI.Text&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Divider)&gt;&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Image)&gt;&gt;, SwiftUI.VStack&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;ShopTilYouDrop.Product.Search_Result&gt;, Swift.String, SwiftUI.Text&gt;&gt;&gt;)&gt; in ShopTilYouDrop.ProductCompair.body.getter : some"
+                  moduleName = "ShopTilYouDrop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Views/ProductCompair.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "59">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EDC09964-8480-4253-B878-5494FFC55A81"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShopTilYouDrop/Views/Search.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "EDC09964-8480-4253-B878-5494FFC55A81 - 911a202116b9927b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, ShopTilYouDrop.ProductCompair&gt;, SwiftUI.VStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.font(Swift.Optional&lt;SwiftUI.Font&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;&gt;, SwiftUI.Group&lt;SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.font(Swift.Optional&lt;SwiftUI.Font&gt;) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of SwiftUI.View.textInputAutocapitalization(Swift.Optional&lt;SwiftUI.TextInputAutocapitalization&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.Divider)&gt;&gt;, SwiftUI.List&lt;Swift.Never, Swift.Optional&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Swift.String)&gt;, Swift.String, SwiftUI.VStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.lineLimit(Swift.Optional&lt;Swift.Int&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0)&gt;&gt;&gt;&gt;&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, ShopTilYouDrop.ProductCompair&gt;, SwiftUI.VStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.font(Swift.Optional&lt;SwiftUI.Font&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;&gt;, SwiftUI.Group&lt;SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.font(Swift.Optional&lt;SwiftUI.Font&gt;) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of SwiftUI.View.textInputAutocapitalization(Swift.Optional&lt;SwiftUI.TextInputAutocapitalization&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.Divider)&gt;&gt;, SwiftUI.List&lt;Swift.Never, Swift.Optional&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Swift.String)&gt;, Swift.String, SwiftUI.VStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.lineLimit(Swift.Optional&lt;Swift.Int&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0)&gt;&gt;&gt;&gt;&gt;&gt;)&gt;&gt; in ShopTilYouDrop.Search.body.getter : some"
+                  moduleName = "ShopTilYouDrop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Views/Search.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "933">
+               </Location>
+               <Location
+                  uuid = "EDC09964-8480-4253-B878-5494FFC55A81 - 2bdfa310da21a491"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.EmptyView in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, ShopTilYouDrop.ProductCompair&gt;, SwiftUI.VStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.font(Swift.Optional&lt;SwiftUI.Font&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;&gt;, SwiftUI.Group&lt;SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.font(Swift.Optional&lt;SwiftUI.Font&gt;) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of SwiftUI.View.textInputAutocapitalization(Swift.Optional&lt;SwiftUI.TextInputAutocapitalization&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.Divider)&gt;&gt;, SwiftUI.List&lt;Swift.Never, Swift.Optional&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Swift.String)&gt;, Swift.String, SwiftUI.VStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.lineLimit(Swift.Optional&lt;Swift.Int&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0)&gt;&gt;&gt;&gt;&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.NavigationLink&lt;SwiftUI.EmptyView, ShopTilYouDrop.ProductCompair&gt;, SwiftUI.VStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.font(Swift.Optional&lt;SwiftUI.Font&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;&gt;, SwiftUI.Group&lt;SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.font(Swift.Optional&lt;SwiftUI.Font&gt;) -&gt; some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of SwiftUI.View.textInputAutocapitalization(Swift.Optional&lt;SwiftUI.TextInputAutocapitalization&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.Divider)&gt;&gt;, SwiftUI.List&lt;Swift.Never, Swift.Optional&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: Swift.String)&gt;, Swift.String, SwiftUI.VStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.lineLimit(Swift.Optional&lt;Swift.Int&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0)&gt;&gt;&gt;&gt;&gt;&gt;)&gt;&gt; in ShopTilYouDrop.Search.body.getter : some"
+                  moduleName = "ShopTilYouDrop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jordanbhar/Desktop/STYD/ShopTilYouDrop/Views/Search.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "745C237E-18DE-487E-A25D-856FCCB71BF5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShopTilYouDrop/Controller/ProductQueryController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "fetchDataFromAPI(product:)"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "getSpecificProductData(index:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

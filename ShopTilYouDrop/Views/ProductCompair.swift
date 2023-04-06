@@ -9,12 +9,12 @@ import SwiftUI
 
 struct ProductCompair: View {
     @State var _productName : String
+    @State var productObject : Product
     @State private var productList = ["Walmart","Amazon","Canada Computers","Best Buy","Apple","Amazon","Amazon","Amazon","Amazon","Amazon",]
-    //@State var productSearchIndex : Int
     @State private var selection : Int? = nil
     
     
-    @EnvironmentObject var productHelper : ProductQueryController
+    
     
     var body: some View {
         VStack{
@@ -54,7 +54,7 @@ struct ProductCompair: View {
             
             VStack{
                 List{
-                    ForEach (productHelper.productDataQuery.search_results, id: \.title){currentProduct in
+                    ForEach (productObject.search_results, id: \.title){currentProduct in
                         Text(currentProduct.title)
                     }
                     
@@ -97,13 +97,13 @@ struct ProductCompair: View {
             
         }
         .onAppear(){
-            //productHelper.fetchDataFromAPI()
+            
         }
     }
 }
 
 struct ProductCompair_Previews: PreviewProvider {
     static var previews: some View {
-        ProductCompair(_productName: "" /*,productSearchIndex: 0*/)
+        ProductCompair(_productName: "" ,productObject: Product())
     }
 }

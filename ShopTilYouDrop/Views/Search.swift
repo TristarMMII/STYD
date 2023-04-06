@@ -10,10 +10,10 @@ import SwiftUI
 struct Search: View {
     
     @State var productList : [String]
-    @State private var searchProduct : String = ""
+    @State var searchProduct : String = ""
     @State private var selection : Int? = nil
     @State private var selectedProduct : String = ""
-    //@State private var selectedProductIndex = -1
+    @State private var product : Product = Product()
     
     @EnvironmentObject var productHelper : ProductQueryController
 
@@ -22,7 +22,7 @@ struct Search: View {
         NavigationView{
             VStack{
                 
-                NavigationLink(destination: ProductCompair(_productName: selectedProduct /*,productSearchIndex: selectedProduct*/), tag : 1, selection: self.$selection ){}
+                NavigationLink(destination: ProductCompair(_productName: selectedProduct , productObject : product ), tag : 1, selection: self.$selection ){}
             
                 VStack{
                     HStack{
@@ -58,6 +58,8 @@ struct Search: View {
                         
                         Button(action:{
                             productList.append(searchProduct)
+                            //maybe create a external function that will wait for the data to be gathered
+                            self.productHelper.fetchDataFromAPI(product: searchProduct)
                         }){
                             Text("Search")
                                 .foregroundColor(.white)
@@ -83,16 +85,13 @@ struct Search: View {
                                     
                                     Spacer().lineLimit(5)
                                     
-                                    Button(action : {
-                                        self.productList.remove(at: index)
-                                        //self.productHelper.productDataQuery.remove(at: index)
-                                        
-                                    }){
-                                        Image(systemName: "trash.fill")
-                                            .font(.title)
-                                    }
+                                    Button(action : {}){ Image(systemName: "trash").font(.title).foregroundColor(Color.white)}
                                     .background(Color.red)
                                     .cornerRadius(10)
+                                    .onTapGesture {
+                                        self.productList.remove(at: index)
+                                        self.productHelper.productData.remove(at: index)
+                                    }
                                     
                                     
                                     Button(action: {}, label: {Text("Compare")
@@ -102,13 +101,10 @@ struct Search: View {
                                         .cornerRadius(10)
                                         .onTapGesture {
                                         self.selectedProduct = currentProduct
-                                        self.productHelper.fetchDataFromAPI(product: selectedProduct)
-                                        //self.selectedProductIndex = index
+                                        self.product = self.productHelper.getSpecificProductData(index: index)
                                         self.selection = 1
-                                                        }
-                                
+                                    }
                                 }
-                                
                             }
                         }
                     }
