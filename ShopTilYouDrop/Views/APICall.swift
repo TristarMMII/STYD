@@ -6,10 +6,10 @@ struct APICall: View {
     
     var body: some View {
             NavigationView {
-                List(productDataQuery.productDataQuery.search_results, id: \.title) { searchResult in
-                    Text(searchResult.title)
-                }
-                .navigationBarTitle("Product List")
+//                List(productDataQuery.productDataQuery.search_results, id: \.title) { search_result in
+//                    Text(search_result.title)
+//                }
+//                .navigationBarTitle("Product List")
             }
         }
     }

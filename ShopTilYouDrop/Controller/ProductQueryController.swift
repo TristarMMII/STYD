@@ -11,15 +11,12 @@ import SwiftUI
 
 class ProductQueryController : ObservableObject{
     
+    //@Published var productDataQuery = [Product()]
     @Published var productDataQuery = Product()
-    
-    init() {
-        self.fetchDataFromAPI()
-    }
-    
-    func fetchDataFromAPI(){
+
+    func fetchDataFromAPI(product : String){
         print("Fetching data from API called")
-        guard let api = URL(string: "https://api.amzapi.com/v1/search?apikey=71f76370-d334-11ed-98bc-73205bb86f59&query=mouse") else {
+        guard let api = URL(string: "https://api.amzapi.com/v1/search?apikey=71f76370-d334-11ed-98bc-73205bb86f59&query=\(product)") else {
             print(#function, "Unable to obtain from string")
             return
         }

@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct ProductCompair: View {
+    @State var _productName : String
     @State private var productList = ["Walmart","Amazon","Canada Computers","Best Buy","Apple","Amazon","Amazon","Amazon","Amazon","Amazon",]
+    //@State var productSearchIndex : Int
     @State private var selection : Int? = nil
-    @State private var selectedIndex : Int = -1
+    
+    
+    @EnvironmentObject var productHelper : ProductQueryController
     
     var body: some View {
         VStack{
             
             VStack{
                 HStack{
-                    Text("Product Name")
+                    Text("\(_productName)")
                         .font(.largeTitle)
                         .bold()
                 }
@@ -50,45 +54,56 @@ struct ProductCompair: View {
             
             VStack{
                 List{
-                    ForEach (productList.enumerated().map({$0}), id: \.element.self){index , currentProduct in
-                        VStack{
-                            
-                            
-                            HStack{
-                                VStack(spacing: 5){
-                                    Text(currentProduct)
-                                        .font(.headline)
-                                        
-                                    Text("Price : $0.00")
-                                    Text("Stock : 1 qty")
-                                }
-
-                                
-                                Spacer()
-                                
-                                Button(action : {
-        
-                                }){
-                                    Text("Checkout")
-                                        .foregroundColor(.white)
-                                        .padding(10)
-                                }
-                                .background(Color.blue)
-                                .cornerRadius(10)
-                            
-                            }
-                            
-                        }
+                    ForEach (productHelper.productDataQuery.search_results, id: \.title){currentProduct in
+                        Text(currentProduct.title)
                     }
+                    
                 }
+                
+                
+//                List{
+//                    ForEach (productList.enumerated().map({$0}), id: \.element.self){index , currentProduct in
+//                        VStack{
+//
+//
+//                            HStack{
+//                                VStack(spacing: 5){
+//                                    Text(currentProduct)
+//                                        .font(.headline)
+//
+//                                    Text("Price : $0.00")
+//                                    Text("Stock : 1 qty")
+//                                }
+//
+//
+//                                Spacer()
+//
+//                                Button(action : {
+//
+//                                }){
+//                                    Text("Checkout")
+//                                        .foregroundColor(.white)
+//                                        .padding(10)
+//                                }
+//                                .background(Color.blue)
+//                                .cornerRadius(10)
+//
+//                            }
+//
+//                        }
+//                    }
+//                }
             }
             
+        }
+        .onAppear(){
+            //productHelper.fetchDataFromAPI()
         }
     }
 }
 
 struct ProductCompair_Previews: PreviewProvider {
     static var previews: some View {
-        ProductCompair()
+        ProductCompair(_productName: "" /*,productSearchIndex: 0*/)
     }
 }

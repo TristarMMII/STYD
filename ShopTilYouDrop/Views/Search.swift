@@ -12,14 +12,18 @@ struct Search: View {
     @State var productList : [String]
     @State private var searchProduct : String = ""
     @State private var selection : Int? = nil
-    @State private var selectedIndex : Int = -1
+    @State private var selectedProduct : String = ""
+    //@State private var selectedProductIndex = -1
+    
+    @EnvironmentObject var productHelper : ProductQueryController
+
     
     var body: some View {
         NavigationView{
             VStack{
                 
-                NavigationLink(destination: ProductCompair(), tag : 1, selection: self.$selection ){}
-                
+                NavigationLink(destination: ProductCompair(_productName: selectedProduct /*,productSearchIndex: selectedProduct*/), tag : 1, selection: self.$selection ){}
+            
                 VStack{
                     HStack{
                         Text("Product Search")
@@ -81,6 +85,8 @@ struct Search: View {
                                     
                                     Button(action : {
                                         self.productList.remove(at: index)
+                                        //self.productHelper.productDataQuery.remove(at: index)
+                                        
                                     }){
                                         Image(systemName: "trash.fill")
                                             .font(.title)
@@ -95,7 +101,9 @@ struct Search: View {
                                         .background(Color.blue)
                                         .cornerRadius(10)
                                         .onTapGesture {
-                                        self.selectedIndex = index
+                                        self.selectedProduct = currentProduct
+                                        self.productHelper.fetchDataFromAPI(product: selectedProduct)
+                                        //self.selectedProductIndex = index
                                         self.selection = 1
                                                         }
                                 
