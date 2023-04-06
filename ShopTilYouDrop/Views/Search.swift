@@ -64,17 +64,20 @@ struct Search: View {
                             isLoading = true
                             productList.append(searchProduct)
                             //maybe create a external function that will wait for the data to be gathered
-                            self.productHelper.fetchProductData(for: searchProduct, completion: { result in
+                            
+                            
+                            
+
+                            productHelper.fetchProductData(for: searchProduct) { result in
                                 switch result {
                                 case .success(let product):
-                                    print("Fetched product: \(product)")
+                                    print("Received product data: \(product)")
                                     self.isLoading = false
-                                    
                                 case .failure(let error):
-                                    print("Error fetching product: \(error)")
+                                    print("Error fetching product data: \(error)")
                                     self.isLoading = false
                                 }
-                            })
+                            }
                         }){
                             Text("Search")
                                 .foregroundColor(.white)
@@ -111,8 +114,17 @@ struct Search: View {
                                     .background(Color.red)
                                     .cornerRadius(10)
                                     .onTapGesture {
-                                        self.productList.remove(at: index)
-                                        self.productHelper.productData.remove(at: index)
+                                        
+                                        productHelper.removeProduct(at: index) { result in
+                                            switch result {
+                                            case .success:
+                                                print("Product removed successfully")
+                                                self.productList.remove(at: index)
+                                            case .failure(let error):
+                                                print("Error removing product: \(error)")
+                                                self.productList.remove(at: index)
+                                            }
+                                        }
                                     }
                                     
                                     
@@ -133,7 +145,17 @@ struct Search: View {
                                     .onTapGesture {
                                         if !isLoading {
                                             self.selectedProduct = currentProduct
-                                            self.product = self.productHelper.getSpecificProductData(index: index)
+                                            productHelper.getSpecificProductData(index: index) { result in
+                                                switch result {
+                                                case .success(let data):
+                                                    print("Received product data: \(data)")
+                                                    self.product = data
+                                                    
+                                                case .failure(let error):
+                                                    print("Error fetching product data: \(error)")
+                                                }
+                                            }
+
                                             self.selection = 1
                                         }
                                     }
