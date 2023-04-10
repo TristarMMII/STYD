@@ -13,50 +13,86 @@ import PhotosUI
 struct Scan: View {
     
     @State private var selection: Int? = nil
-    @State private var selectedImage: UIImage? = nil
+    
+    @State private var profileImage : UIImage?
+    @State private var permissionGranted : Bool = false
+    @State private var showSheet : Bool = false
+    @State private var showPicker : Bool = false
+    @State private var isUsingCamera : Bool = false
     
 //    private var coordinator: Coordinator? = nil
     
     var body: some View {
         
         
-        VStack (spacing: 75){
+        
+        VStack{
+            
+            NavigationLink(destination: CameraView(), tag: 1, selection: self.$selection){}
 
             Text("Shop Till You Drop")
                 .font(.title2)
                 .fontWeight(.bold)
+                .padding(.top, -10)
+            
             
             Text("Scan or select a photo")
                 .fontWeight(.bold)
                 .font(.largeTitle)
                 .underline()
+                .padding(.top, 55)
             
-            if let inputImage = selectedImage {
-                Image(uiImage: inputImage)
+            Image(uiImage: (profileImage ?? UIImage(systemName: "photo"))!)
                     .resizable()
-                    .frame(width: 175, height: 175)
-                    .overlay(
-                        Rectangle()
-                            .stroke(Color.black, lineWidth: 2)
-                            .padding(-50)
-                    )
-            } else {
-                Image("photo")
-                    .resizable()
-                    .frame(width: 175, height: 175)
-                    .overlay(
-                        Rectangle()
-                            .stroke(Color.black, lineWidth: 2)
-                            .padding(-50)
-                    )
+                    .frame(width: 315, height: 315)
+//                    .overlay(
+//                        Rectangle()
+//                            .stroke(Color.black, lineWidth: 2)
+//                            .padding(-50)
+//                    )
+            
+            Button(action: {
+                if(self.permissionGranted){
+                    self.showSheet = true
+                }else{
+                    self.requestPermissions()
+                }
+            }){
+                Text("Upload Picture")
             }
-            
-            
-            NavigationLink(destination: CameraView(), tag: 1, selection: self.$selection){}
+            .actionSheet(isPresented: $showSheet){
+                ActionSheet(title: Text("Select Photo"),
+                message: Text("Choose photo to upload"),
+                buttons: [
+                    .default(Text("Choose from Photo Library")){
+                        // when user want to pick pic from the library
+                        self.showPicker = true
+                    },
+                    .default(Text("Take a new pic from camera")){
+                        // when user want to open camera and click new pic
+                        selection = 1
+                        guard UIImagePickerController.isSourceTypeAvailable(.camera)
+                        else{
+                            print(#function, "Camera is not available")
+                            return
+                        }
+                        
+                        print(#function, "Camera is available")
+                        //camera is available, open the  camera to allow taking pic
+                        self.isUsingCamera = true
+                        self.showPicker = true
+                    },
+                    .cancel()
+                ]
+                            
+                )//action sheet
+            }//.actionsheet
+            .padding(.top, 35)
+            .padding(.bottom, 55)
             
             
             Button(action: {
-                selection = 1
+                print("DO ML KIT")
             }){
                 Text("SCAN")
                     .modifier(CustomTextM(fontName: "MavenPro-Bold", fontSize: 16, fontColor: Color.white))
@@ -65,97 +101,54 @@ struct Scan: View {
                     .frame(height: 56, alignment: .leading)
                     .background(Color.blue)
                     .cornerRadius(7)
+            }//button
+            
+            Spacer()
+            
+        }//vstack
+        .offset(y: 0)
+            .fullScreenCover(isPresented: $showPicker){
+                if(isUsingCamera){
+                    //show camera selction
+                }else{
+                    //open photoLibrary
+                    LibraryPicker(selectedImage: self.$profileImage, isPresented: self.$showPicker)
+                }
             }
-            
-            HStack {
-                
-                Image("photo")
-                    .resizable()
-                    .frame(width: 30, height: 30)
-                
-                Text("Select Photo")
-                
-            }.onTapGesture {
-                
-               didTapAdd()
-                
-                
-            }.padding(-50)
-            
-        }.offset(y: 0)
+            .onAppear(){
+                checkPermissions()
+            }//.onAppear
     }
     
-    func didTapAdd(){
-        var config = PHPickerConfiguration()
-        config.filter = .images
-        config.selectionLimit = 1
-        
-//        let picker = PHPickerViewController(configuration: config)
-        
-        let picker = UIImagePickerController()
-        
-//        coordinator = Coordinator(self)
-        
-//        coordinator = Coordinator(self)
-//        picker.delegate = coordinator
-        picker.delegate = Coordinator(self) as? any UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        picker.allowsEditing = true
-        picker.sourceType = .photoLibrary
-        //        UIApplication.shared.windows.first?.rootViewController?.present(vc, animated: true)
-        DispatchQueue.main.async {
-            if let topWindow = UIApplication.shared.connectedScenes
-                .compactMap({ $0 as? UIWindowScene })
-                .flatMap({ $0.windows })
-                .first(where: { $0.isKeyWindow }) {
-                topWindow.rootViewController?.present(picker, animated: true)
-            }
-            }
-    }
-    
-
-    class Coordinator: NSObject, PHPickerViewControllerDelegate {
-        var parent: Scan
-        
-        init(_ parent: Scan) {
-            self.parent = parent
+    private func checkPermissions(){
+        switch PHPhotoLibrary.authorizationStatus(){
+        case .authorized:
+            self.permissionGranted = true
+        case .denied, .notDetermined, .restricted, .limited:
+            self.requestPermissions()
+        @unknown default:
+            break
         }
-        
-        func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-//            picker.dismiss(animated: true, completion: nil)
-            print("TESTING")
-            
-            func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-                        if let uiImage = info[.editedImage] as? UIImage {
-                            parent.selectedImage = uiImage
-                        } else if let uiImage = info[.originalImage] as? UIImage {
-                            parent.selectedImage = uiImage
-                            
-                        }
-                        picker.dismiss(animated: true)
-                    }
-        }
-
-        
-//        func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-//            picker.dismiss(animated: true, completion: nil)
-//            guard let itemProvider = results.first?.itemProvider else {
-//                return
-//            }
-//            if itemProvider.canLoadObject(ofClass: UIImage.self) {
-//                itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
-//                    if let image = image as? UIImage {
-//                        DispatchQueue.main.async {
-//                            self?.parent.selectedImage = image
-//                        }
-//                    }
-//                }
-//            }
-//        }
     }
-
-        
-        
     
+    private func requestPermissions(){
+        PHPhotoLibrary.requestAuthorization{status in
+            switch status{
+            case .authorized:
+                self.permissionGranted = false
+                
+            case .denied, .notDetermined:
+                return
+                
+            case .restricted:
+                return
+            case .limited:
+                return
+            @unknown default:
+                return
+            }
+        }
+    }
 }
 
 struct Scan_Previews: PreviewProvider {
