@@ -113,6 +113,8 @@ struct Scan: View {
                 }else{
                     //open photoLibrary
                     LibraryPicker(selectedImage: self.$profileImage, isPresented: self.$showPicker)
+                    
+                    
                 }
             }
             .onAppear(){
