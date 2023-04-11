@@ -10,6 +10,7 @@ import Photos
 import PhotosUI
 
 
+
 struct Scan: View {
     
     @State private var selection: Int? = nil
@@ -70,7 +71,7 @@ struct Scan: View {
                     },
                     .default(Text("Take a new pic from camera")){
                         // when user want to open camera and click new pic
-                        selection = 1
+//                        selection = 1
                         guard UIImagePickerController.isSourceTypeAvailable(.camera)
                         else{
                             print(#function, "Camera is not available")
@@ -79,8 +80,8 @@ struct Scan: View {
                         
                         print(#function, "Camera is available")
                         //camera is available, open the  camera to allow taking pic
-                        self.isUsingCamera = true
-                        self.showPicker = true
+//                        self.isUsingCamera = true
+//                        self.showPicker = true
                     },
                     .cancel()
                 ]
@@ -93,6 +94,7 @@ struct Scan: View {
             
             Button(action: {
                 print("DO ML KIT")
+                selection = 1
             }){
                 Text("SCAN")
                     .modifier(CustomTextM(fontName: "MavenPro-Bold", fontSize: 16, fontColor: Color.white))
@@ -113,6 +115,8 @@ struct Scan: View {
                 }else{
                     //open photoLibrary
                     LibraryPicker(selectedImage: self.$profileImage, isPresented: self.$showPicker)
+                    
+                    
                     
                     
                 }

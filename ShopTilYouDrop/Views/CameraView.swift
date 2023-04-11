@@ -170,14 +170,6 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
         }else {
             print("camera not available")
         }
-        
-        
-        
-        
-        
-        //    }catch{
-        //        print(error.localizedDescription)
-        //    }
     }
     
     //take and retake
