@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ProductCompair: View {
     let productName: String
-    let productObject: Product
-    
+    let productIndex : Int
     @EnvironmentObject var productHelper: ProductQueryController
     
     var body: some View {
@@ -49,12 +48,15 @@ struct ProductCompair: View {
             }
             
             VStack{
-                List{
-                    ForEach(productHelper.productData, id: \.request_id) { product in
-                        ForEach(product.data, id: \.product_id) { data in
+                if let productData = productHelper.productData[safe: productIndex]?.data {
+                    List{
+                        ForEach(productData, id: \.product_id) { data in
                             Text(data.product_title ?? "No Data")
+                            //since this is the compoarison page show the price range and let the user then go into the details page to show the entire details of the product they mighy be interested in
                         }
                     }
+                } else {
+                    Text("No data available")
                 }
             }
         }
@@ -63,6 +65,13 @@ struct ProductCompair: View {
 
 struct ProductCompair_Previews: PreviewProvider {
     static var previews: some View {
-        ProductCompair(productName: "", productObject: Product())
+        ProductCompair(productName: "", productIndex: 0)
     }
 }
+
+extension Collection {
+    subscript(safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
+}
+

@@ -16,10 +16,10 @@ struct Search: View {
     @State var searchProduct : String = ""
     @State private var selection : Int? = nil
     @State private var selectedProduct : String = ""
-    @State private var product : Product = Product()
+    @State private var product : [Product] = [Product]()
     @State private var isLoading = false
     @State private var showingAlert = false
-
+    @State private var currentIndex = 0
     @EnvironmentObject var productHelper : ProductQueryController
 
     
@@ -27,7 +27,7 @@ struct Search: View {
         NavigationView{
             VStack{
                 
-                NavigationLink(destination: ProductCompair(productName: selectedProduct , productObject : product ), tag : 1, selection: self.$selection ){}
+                NavigationLink(destination: ProductCompair(productName: selectedProduct, productIndex: currentIndex ), tag : 1, selection: self.$selection ){}
             
                 VStack{
                     HStack{
@@ -127,6 +127,7 @@ struct Search: View {
                                             case .success:
                                                 print("Product removed successfully")
                                                 self.productList.remove(at: index)
+                                                //need to fix this method, its removing products, but not the correct one, simple fix just gotta figure out where the sillyness is coming from
                                             case .failure(let error):
                                                 print("Error removing product: \(error)")
                                                 self.productList.remove(at: index)
@@ -152,17 +153,18 @@ struct Search: View {
                                     .onTapGesture {
                                         if !isLoading {
                                             self.selectedProduct = currentProduct
-                                            productHelper.getSpecificProductData(index: index) { result in
-                                                switch result {
-                                                case .success(let data):
-                                                    print("Received product data: \(data)")
-                                                    self.product.data.append(data)
-                                                    
-                                                case .failure(let error):
-                                                    print("Error fetching product data: \(error)")
-                                                    productList.remove(at: index)
-                                                }
-                                            }
+                                            self.currentIndex = index
+//                                            productHelper.getSpecificProductData(index: index) { result in
+//                                                switch result {
+//                                                case .success(let data):
+//                                                    print("Received product data: \(data)")
+//                                                    self.product.data.append(data)
+//
+//                                                case .failure(let error):
+//                                                    print("Error fetching product data: \(error)")
+//                                                    productList.remove(at: index)
+//                                                }
+//                                            }
 
                                             self.selection = 1
                                         }
