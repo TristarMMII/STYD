@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ProductCompair: View {
     let productName: String
-    let productIndex : Int
+    let productIndex: Int
     @EnvironmentObject var productHelper: ProductQueryController
     
     var body: some View {
-        VStack{
-            VStack{
-                HStack{
+        VStack {
+            VStack {
+                HStack {
                     Text("\(productName)")
                         .font(.largeTitle)
                         .bold()
@@ -25,9 +25,8 @@ struct ProductCompair: View {
             
             Spacer()
             
-            HStack(spacing: 150){
-                
-                VStack(spacing: 10){
+            HStack(spacing: 150) {
+                VStack(spacing: 10) {
                     Text("Lowest Price : ")
                         .font(.title2)
                         .bold()
@@ -43,16 +42,18 @@ struct ProductCompair: View {
                 }
                 
                 Image(systemName: "magnifyingglass")
-                
-                
             }
             
-            VStack{
+            VStack {
                 if let productData = productHelper.productData[safe: productIndex]?.data {
-                    List{
+                    List {
                         ForEach(productData, id: \.product_id) { data in
-                            Text(data.product_title ?? "No Data")
-                            //since this is the compoarison page show the price range and let the user then go into the details page to show the entire details of the product they mighy be interested in
+                            NavigationLink(
+                                destination: ProductsDetailPage(product: data)
+                            ) {
+                                Text(data.product_title ?? "No Data")
+                                //since this is the comparison page show the price range and let the user then go into the details page to show the entire details of the product they might be interested in
+                            }
                         }
                     }
                 } else {
