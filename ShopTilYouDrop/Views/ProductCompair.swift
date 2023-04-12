@@ -8,20 +8,16 @@
 import SwiftUI
 
 struct ProductCompair: View {
-    @State var _productName : String
-    @State var productObject : Product
-    @State private var productList = ["Walmart","Amazon","Canada Computers","Best Buy","Apple","Amazon","Amazon","Amazon","Amazon","Amazon",]
-    @State private var selection : Int? = nil
+    let productName: String
+    let productObject: Product
     
-    
-    
+    @EnvironmentObject var productHelper: ProductQueryController
     
     var body: some View {
         VStack{
-            
             VStack{
                 HStack{
-                    Text("\(_productName)")
+                    Text("\(productName)")
                         .font(.largeTitle)
                         .bold()
                 }
@@ -54,56 +50,19 @@ struct ProductCompair: View {
             
             VStack{
                 List{
-                    ForEach (productObject.search_results, id: \.title){currentProduct in
-                        Text(currentProduct.title)
+                    ForEach(productHelper.productData, id: \.request_id) { product in
+                        ForEach(product.data, id: \.product_id) { data in
+                            Text(data.product_title ?? "No Data")
+                        }
                     }
-                    
                 }
-                
-                
-//                List{
-//                    ForEach (productList.enumerated().map({$0}), id: \.element.self){index , currentProduct in
-//                        VStack{
-//
-//
-//                            HStack{
-//                                VStack(spacing: 5){
-//                                    Text(currentProduct)
-//                                        .font(.headline)
-//
-//                                    Text("Price : $0.00")
-//                                    Text("Stock : 1 qty")
-//                                }
-//
-//
-//                                Spacer()
-//
-//                                Button(action : {
-//
-//                                }){
-//                                    Text("Checkout")
-//                                        .foregroundColor(.white)
-//                                        .padding(10)
-//                                }
-//                                .background(Color.blue)
-//                                .cornerRadius(10)
-//
-//                            }
-//
-//                        }
-//                    }
-//                }
             }
-            
-        }
-        .onAppear(){
-            
         }
     }
 }
 
 struct ProductCompair_Previews: PreviewProvider {
     static var previews: some View {
-        ProductCompair(_productName: "" ,productObject: Product())
+        ProductCompair(productName: "", productObject: Product())
     }
 }

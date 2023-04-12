@@ -18,7 +18,8 @@ struct Search: View {
     @State private var selectedProduct : String = ""
     @State private var product : Product = Product()
     @State private var isLoading = false
-    
+    @State private var showingAlert = false
+
     @EnvironmentObject var productHelper : ProductQueryController
 
     
@@ -26,7 +27,7 @@ struct Search: View {
         NavigationView{
             VStack{
                 
-                NavigationLink(destination: ProductCompair(_productName: selectedProduct , productObject : product ), tag : 1, selection: self.$selection ){}
+                NavigationLink(destination: ProductCompair(productName: selectedProduct , productObject : product ), tag : 1, selection: self.$selection ){}
             
                 VStack{
                     HStack{
@@ -75,10 +76,13 @@ struct Search: View {
                                     self.isLoading = false
                                 case .failure(let error):
                                     print("Error fetching product data: \(error)")
-                                    
+                                    productList.removeLast()
                                     self.isLoading = false
+                                    showingAlert = true
+                                    
                                 }
                             }
+                            
                         }){
                             Text("Search")
                                 .foregroundColor(.white)
@@ -90,6 +94,8 @@ struct Search: View {
                     }
 
                     Divider()
+                }.alert(isPresented: $showingAlert) {
+                    Alert(title: Text("To Many Queries"), message: Text("Please Wait a Few Miniutes Before Searching Again"), dismissButton: .default(Text("Dismiss")))
                 }
                 
                 List{
@@ -150,7 +156,7 @@ struct Search: View {
                                                 switch result {
                                                 case .success(let data):
                                                     print("Received product data: \(data)")
-                                                    self.product = data
+                                                    self.product.data.append(data)
                                                     
                                                 case .failure(let error):
                                                     print("Error fetching product data: \(error)")

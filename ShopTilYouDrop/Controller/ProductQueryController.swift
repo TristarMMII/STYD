@@ -23,12 +23,19 @@ class ProductQueryController : ObservableObject {
     @Published var productData = [Product]()
     
     func fetchProductData(for product: String, completion: @escaping (Result<Product, Error>) -> Void) {
-        guard let url = URL(string: "https://api.amzapi.com/v1/search?apikey=23ad2900-d48f-11ed-8624-557ed054ab15&query=\(product)") else {
+        
+        let headers = [            "X-RapidAPI-Key": "38f6a0f947mshfdb5e87b243e4d9p13bea8jsn642635524b26",            "X-RapidAPI-Host": "real-time-product-search.p.rapidapi.com"        ]
+        
+        guard let url = URL(string: "https://real-time-product-search.p.rapidapi.com/search?q=\(product)&country=us&language=en") else {
             completion(.failure(NetworkError.invalidURL))
             return
         }
         
-        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
+        URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
@@ -53,7 +60,7 @@ class ProductQueryController : ObservableObject {
                 let decoder = JSONDecoder()
                 let product = try decoder.decode(Product.self, from: data)
                 DispatchQueue.main.async { [weak self] in
-                    self?.productData.append(product)
+                    self?.productData.append(product) // add product to a new index in productData
                 }
                 completion(.success(product))
             } catch {
@@ -62,11 +69,11 @@ class ProductQueryController : ObservableObject {
         }.resume()
     }
     
-    func getSpecificProductData(index: Int, completion: @escaping (Result<Product, Error>) -> Void) {
-        if index < productData.count {
-            if(productData[index].search_results != nil){
-                let product = productData[index]
-                completion(.success(product))
+    func getSpecificProductData(index: Int, completion: @escaping (Result<Product.Datum, Error>) -> Void) {
+        if index < productData[index].data.count {
+            if(productData[index].data != nil){
+                let product = productData[index].data
+                completion(.success(product[index]))
             }
         } else {
             let error = NSError(domain: "com.example.app", code: 0, userInfo: [NSLocalizedDescriptionKey: "Product data not available yet"])
@@ -75,8 +82,8 @@ class ProductQueryController : ObservableObject {
     }
     
     func removeProduct(at index: Int, completion: @escaping (Result<Void, Error>) -> Void) {
-        if index < productData.count {
-            productData.remove(at: index)
+        if index < productData[index].data.count {
+            productData[index].data.remove(at: index)
             completion(.success(()))
         } else {
             let error = NSError(domain: "com.example.app", code: 0, userInfo: [NSLocalizedDescriptionKey: "Index out of range"])
@@ -85,9 +92,3 @@ class ProductQueryController : ObservableObject {
     }
 
 }
-
-
-
-
-
-
