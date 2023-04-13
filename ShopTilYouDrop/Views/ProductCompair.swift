@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct ProductCompair: View {
-    @State private var productList = ["Walmart","Amazon","Canada Computers","Best Buy","Apple","Amazon","Amazon","Amazon","Amazon","Amazon",]
-    @State private var selection : Int? = nil
-    @State private var selectedIndex : Int = -1
+    let productName: String
+    let productIndex: Int
+    @EnvironmentObject var productHelper: ProductQueryController
     
     var body: some View {
-        VStack{
-            
-            VStack{
-                HStack{
-                    Text("Product Name")
+        VStack {
+            VStack {
+                HStack {
+                    Text("\(productName)")
                         .font(.largeTitle)
                         .bold()
                 }
@@ -26,9 +25,8 @@ struct ProductCompair: View {
             
             Spacer()
             
-            HStack(spacing: 150){
-                
-                VStack(spacing: 10){
+            HStack(spacing: 150) {
+                VStack(spacing: 10) {
                     Text("Lowest Price : ")
                         .font(.title2)
                         .bold()
@@ -44,51 +42,37 @@ struct ProductCompair: View {
                 }
                 
                 Image(systemName: "magnifyingglass")
-                
-                
             }
             
-            VStack{
-                List{
-                    ForEach (productList.enumerated().map({$0}), id: \.element.self){index , currentProduct in
-                        VStack{
-                            
-                            
-                            HStack{
-                                VStack(spacing: 5){
-                                    Text(currentProduct)
-                                        .font(.headline)
-                                        
-                                    Text("Price : $0.00")
-                                    Text("Stock : 1 qty")
-                                }
-
-                                
-                                Spacer()
-                                
-                                Button(action : {
-        
-                                }){
-                                    Text("Checkout")
-                                        .foregroundColor(.white)
-                                        .padding(10)
-                                }
-                                .background(Color.blue)
-                                .cornerRadius(10)
-                            
+            VStack {
+                if let productData = productHelper.productData[safe: productIndex]?.data {
+                    List {
+                        ForEach(productData, id: \.product_id) { data in
+                            NavigationLink(
+                                destination: ProductsDetailPage(product: data)
+                            ) {
+                                Text(data.product_title ?? "No Data")
+                                //since this is the comparison page show the price range and let the user then go into the details page to show the entire details of the product they might be interested in
                             }
-                            
                         }
                     }
+                } else {
+                    Text("No data available")
                 }
             }
-            
         }
     }
 }
 
 struct ProductCompair_Previews: PreviewProvider {
     static var previews: some View {
-        ProductCompair()
+        ProductCompair(productName: "", productIndex: 0)
     }
 }
+
+extension Collection {
+    subscript(safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
+}
+
