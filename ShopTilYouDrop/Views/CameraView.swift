@@ -11,6 +11,9 @@ import AVFoundation
 struct CameraView: View {
     
     @StateObject var camera = CameraModel()
+    @State public var selection: Int? = nil
+    @State private var showingAlert = false
+    
     
     var body: some View {
         ZStack{
@@ -19,13 +22,22 @@ struct CameraView: View {
             
             VStack{
                 
+                NavigationLink(destination: Scan(), tag: 1, selection: self.$selection){}
+                
                 Spacer()
                 
                 HStack{
                     
                     if camera.isTaken{
                         
-                        Button(action: {if !camera.isSaved{camera.SaveOutput()}}, label: {
+                        
+                        Button(action: {if !camera.isSaved{camera.SaveOutput()}
+                            if camera.isSaved{
+                                showingAlert = true
+                                selection = 1
+                            }
+                            
+                        }, label: {
                             Text(camera.isSaved ? "Saved" : "Save")
                                 .foregroundColor(.black)
                                 .fontWeight(.bold)
@@ -35,6 +47,9 @@ struct CameraView: View {
                                 .clipShape(Capsule())
                         })
                         .padding(.leading)
+                        .alert("Photo Saved Successfully", isPresented: $showingAlert) {
+                                    Button("OK", role: .cancel) { }
+                                }
                         
                         HStack{
                             Spacer()
@@ -167,17 +182,28 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
             catch {
                 print("error")
             }
+        }else if let deviceDual = AVCaptureDevice.default(.builtInDualWideCamera, for: .video, position: .back){
+            do{
+                let input = try AVCaptureDeviceInput(device: deviceDual)
+                
+                //check and add to session
+                if self.session.canAddInput(input){
+                    self.session.addInput(input)
+                }
+                
+                //output
+                if self.session.canAddOutput(self.output){
+                    self.session.addOutput(self.output)
+                }
+                
+                self.session.commitConfiguration()
+            }
+            catch {
+                print("error")
+            }
         }else {
             print("camera not available")
         }
-        
-        
-        
-        
-        
-        //    }catch{
-        //        print(error.localizedDescription)
-        //    }
     }
     
     //take and retake
@@ -225,9 +251,12 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
             //save image
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             
+            
             self.isSaved = true
             
             print("Save Successful")
+            
+            
         }
         
         
