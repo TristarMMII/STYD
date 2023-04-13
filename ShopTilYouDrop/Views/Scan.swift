@@ -20,8 +20,13 @@ struct Scan: View {
     @State private var showSheet : Bool = false
     @State private var showPicker : Bool = false
     @State private var isUsingCamera : Bool = false
+    
+//    let image = VisionImage(image: UIImage)
+//    visionImage.orientation = image.imageOrientation
+    @State private var imageScan = VisionImage(image: UIImage)
+    visionImage.orientation = image.imageOrientation
 
-//    private var coordinator: Coordinator? = nil
+    let labeler = ImageLabeler.imageLabeler()
 
     var body: some View {
 
@@ -119,6 +124,15 @@ struct Scan: View {
                     //open photoLibrary
                     LibraryPicker(selectedImage: self.$profileImage, isPresented: self.$showPicker)
 
+                    labeler.process(image) { labels, error in
+                        guard error == nil, let labels = labels else { return }
+
+                        for label in labels {
+                            let labelText = label.text
+                            let confidence = label.confidence
+                            let index = label.index
+                        }
+                    }
 
 
 
