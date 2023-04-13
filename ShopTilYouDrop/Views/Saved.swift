@@ -12,7 +12,7 @@ import FirebaseAuth
 
 struct Saved: View {
     
-   @State var items : [String] = []
+    @State var items : [String] = []
     
     func fetchItems() {
         guard let userId = Auth.auth().currentUser?.uid else {

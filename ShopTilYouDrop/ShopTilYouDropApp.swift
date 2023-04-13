@@ -24,7 +24,7 @@ struct ShopTilYouDropApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Search(productList: []).environmentObject(fireDBHelper).environmentObject(productDataQuery)
+            ContentView().environmentObject(fireDBHelper).environmentObject(productDataQuery)
         }
     }
 }

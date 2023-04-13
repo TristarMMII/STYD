@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 struct ProductsDetailPage: View {
     
     var product : Product.Datum
+    @State private var isFavorite = false
     
     var body: some View {
         VStack {
@@ -17,6 +20,30 @@ struct ProductsDetailPage: View {
                 Text(product.product_title ?? "No Data")
                     .font(.largeTitle)
                     .bold()
+                
+                VStack{
+                    
+                    Button(action : {
+                        
+                        let db = Firestore.firestore()
+                        let data = db.collection("UserData").document(Auth.auth().currentUser!.uid)
+                        data.updateData(["Wishlist": FieldValue.arrayUnion([product.product_title!])]) { error in
+                            if let error = error {
+                                print(error.localizedDescription)
+                            }
+                        }
+                        
+                    }){ Image(systemName: "heart.fill")
+                        .font(.largeTitle)}
+                        .cornerRadius(10)
+                    
+                    Text("Save")
+                    
+                }
+                
+                .onTapGesture {
+                    
+                }
             }
             Divider()
         }
