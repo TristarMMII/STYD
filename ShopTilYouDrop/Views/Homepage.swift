@@ -63,7 +63,7 @@ struct Homepage: View {
                             HStack {
                                 Image(systemName: "list.clipboard.fill")
                                     .foregroundColor(.red)
-                                Text("Menu Item 1")
+                                Text("History")
                             }
                         }
                         .padding(.top)

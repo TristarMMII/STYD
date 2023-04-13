@@ -17,6 +17,7 @@ struct Settings: View {
         VStack{
             
             NavigationLink(destination: Login(), tag: 1, selection: self.$selection){}
+            NavigationLink(destination: Update(), tag: 2, selection: self.$selection){}
             
             VStack{
                 Image(systemName: "gearshape.fill")
@@ -36,6 +37,16 @@ struct Settings: View {
                         .font(.title2)
                 }//section
                 .font(.title2)
+                
+                Section(header: Text("Update Information")){
+                    Text("Update Information")
+                }//section
+                .font(.title2)
+                .onTapGesture {
+                    self.selection = 2
+                }
+                
+                
             }
                 
             Button(action:{
