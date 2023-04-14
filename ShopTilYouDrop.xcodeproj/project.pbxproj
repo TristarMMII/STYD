@@ -21,17 +21,20 @@
 		02AD927029DCC0E500269CA6 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AD926F29DCC0E500269CA6 /* APICall.swift */; };
 		02AD927229DCCC4900269CA6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AD927129DCCC4900269CA6 /* API.swift */; };
 		02AFA15129BE9F1700E82A50 /* Saved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFA15029BE9F1700E82A50 /* Saved.swift */; };
-		02AFA15329BEA1DE00E82A50 /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFA15229BEA1DE00E82A50 /* Scan.swift */; };
+		1C5D6F3D062D7AF2C2C886DF /* Pods_ShopTilYouDrop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E374B71431EF2506A83C53 /* Pods_ShopTilYouDrop.framework */; };
 		4D1DCF4F29E75B3600BF0C24 /* ProductsDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DCF4E29E75B3600BF0C24 /* ProductsDetailPage.swift */; };
 		4D4BE23929DE1C0C009AC911 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 4D4BE23829DE1C0C009AC911 /* Algorithms */; };
 		4D59641D29BEBE4A00CCA441 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D59641C29BEBE4A00CCA441 /* Search.swift */; };
 		4D59641F29BECF5800CCA441 /* ProductCompair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D59641E29BECF5800CCA441 /* ProductCompair.swift */; };
 		C50A4C5C29CC803E00269573 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50A4C5B29CC803E00269573 /* CameraView.swift */; };
+		C5487D5D29E9DCA0007B427B /* ImageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5487D5C29E9DCA0007B427B /* ImageClassifier.swift */; };
 		C549B49829E83BFC00A09BAD /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C549B49729E83BFC00A09BAD /* CameraModel.swift */; };
 		C553C8E629B8E7590014AA98 /* ShopTilYouDropApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C553C8E529B8E7590014AA98 /* ShopTilYouDropApp.swift */; };
 		C553C8E829B8E7590014AA98 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C553C8E729B8E7590014AA98 /* ContentView.swift */; };
 		C553C8EA29B8E75B0014AA98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C553C8E929B8E75B0014AA98 /* Assets.xcassets */; };
 		C553C8ED29B8E75B0014AA98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C553C8EC29B8E75B0014AA98 /* Preview Assets.xcassets */; };
+		C559303629E9D68E0024F2DB /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C559303529E9D68E0024F2DB /* MobileNetV2.mlmodel */; };
+		C559303829E9D7260024F2DB /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C559303729E9D7260024F2DB /* Classifier.swift */; };
 		C5E8089829E6150E00872242 /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AFA15229BEA1DE00E82A50 /* Scan.swift */; };
 		C5E8089B29E6156D00872242 /* LibraryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8089A29E6156D00872242 /* LibraryPicker.swift */; };
 		C5E8E5BF29BEA5500030CDA1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8E5BE29BEA5500030CDA1 /* Settings.swift */; };
@@ -53,13 +56,19 @@
 		4D1DCF4E29E75B3600BF0C24 /* ProductsDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDetailPage.swift; sourceTree = "<group>"; };
 		4D59641C29BEBE4A00CCA441 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		4D59641E29BECF5800CCA441 /* ProductCompair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCompair.swift; sourceTree = "<group>"; };
+		6275084D285B6E9DC71E49E6 /* Pods-ShopTilYouDrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopTilYouDrop.debug.xcconfig"; path = "Target Support Files/Pods-ShopTilYouDrop/Pods-ShopTilYouDrop.debug.xcconfig"; sourceTree = "<group>"; };
+		76E48677AFF4715F9FE9A976 /* Pods-ShopTilYouDrop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopTilYouDrop.release.xcconfig"; path = "Target Support Files/Pods-ShopTilYouDrop/Pods-ShopTilYouDrop.release.xcconfig"; sourceTree = "<group>"; };
+		B6E374B71431EF2506A83C53 /* Pods_ShopTilYouDrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShopTilYouDrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C50A4C5B29CC803E00269573 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		C5487D5C29E9DCA0007B427B /* ImageClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassifier.swift; sourceTree = "<group>"; };
 		C549B49729E83BFC00A09BAD /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
 		C553C8E229B8E7580014AA98 /* ShopTilYouDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopTilYouDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C553C8E529B8E7590014AA98 /* ShopTilYouDropApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTilYouDropApp.swift; sourceTree = "<group>"; };
 		C553C8E729B8E7590014AA98 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C553C8E929B8E75B0014AA98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C553C8EC29B8E75B0014AA98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C559303529E9D68E0024F2DB /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
+		C559303729E9D7260024F2DB /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
 		C5E8089A29E6156D00872242 /* LibraryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPicker.swift; sourceTree = "<group>"; };
 		C5E8E5BE29BEA5500030CDA1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +82,7 @@
 				020F474E29D6254D00A99C66 /* FirebaseDatabase in Frameworks */,
 				020F474C29D6254D00A99C66 /* FirebaseAuth in Frameworks */,
 				020F475029D6254D00A99C66 /* FirebaseFirestore in Frameworks */,
+				1C5D6F3D062D7AF2C2C886DF /* Pods_ShopTilYouDrop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +94,8 @@
 			children = (
 				020F475529D625C600A99C66 /* User.swift */,
 				02AD927129DCCC4900269CA6 /* API.swift */,
+				C559303729E9D7260024F2DB /* Classifier.swift */,
+				C5487D5C29E9DCA0007B427B /* ImageClassifier.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,11 +137,30 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		87706C24EAF7F5425DF5DAC3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6275084D285B6E9DC71E49E6 /* Pods-ShopTilYouDrop.debug.xcconfig */,
+				76E48677AFF4715F9FE9A976 /* Pods-ShopTilYouDrop.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AA34650EEBCEF60DFD6A5753 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6E374B71431EF2506A83C53 /* Pods_ShopTilYouDrop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C553C8D929B8E7580014AA98 = {
 			isa = PBXGroup;
 			children = (
 				C553C8E429B8E7580014AA98 /* ShopTilYouDrop */,
 				C553C8E329B8E7580014AA98 /* Products */,
+				87706C24EAF7F5425DF5DAC3 /* Pods */,
+				AA34650EEBCEF60DFD6A5753 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +175,7 @@
 		C553C8E429B8E7580014AA98 /* ShopTilYouDrop */ = {
 			isa = PBXGroup;
 			children = (
+				C559303529E9D68E0024F2DB /* MobileNetV2.mlmodel */,
 				020F475229D6259A00A99C66 /* Controller */,
 				020F475129D6259200A99C66 /* Model */,
 				020F474829D5E66B00A99C66 /* GoogleService-Info.plist */,
@@ -172,9 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C553C8F029B8E75B0014AA98 /* Build configuration list for PBXNativeTarget "ShopTilYouDrop" */;
 			buildPhases = (
+				D571049434A162971D2D18B6 /* [CP] Check Pods Manifest.lock */,
 				C553C8DE29B8E7580014AA98 /* Sources */,
 				C553C8DF29B8E7580014AA98 /* Frameworks */,
 				C553C8E029B8E7580014AA98 /* Resources */,
+				30B97420DA27EEFF6570165E /* [CP] Embed Pods Frameworks */,
+				3BA73308AEA757AE1E64513E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,7 +252,7 @@
 			mainGroup = C553C8D929B8E7580014AA98;
 			packageReferences = (
 				020F474A29D6254D00A99C66 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				4D4BE23729DE1C0C009AC911 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				4D4BE23729DE1C0C009AC911 /* XCRemoteSwiftPackageReference "swift-algorithms.git" */,
 			);
 			productRefGroup = C553C8E329B8E7580014AA98 /* Products */;
 			projectDirPath = "";
@@ -241,15 +276,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		30B97420DA27EEFF6570165E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShopTilYouDrop/Pods-ShopTilYouDrop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShopTilYouDrop/Pods-ShopTilYouDrop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShopTilYouDrop/Pods-ShopTilYouDrop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BA73308AEA757AE1E64513E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShopTilYouDrop/Pods-ShopTilYouDrop-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShopTilYouDrop/Pods-ShopTilYouDrop-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShopTilYouDrop/Pods-ShopTilYouDrop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D571049434A162971D2D18B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShopTilYouDrop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C553C8DE29B8E7580014AA98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C559303829E9D7260024F2DB /* Classifier.swift in Sources */,
 				C553C8E829B8E7590014AA98 /* ContentView.swift in Sources */,
 				4D59641F29BECF5800CCA441 /* ProductCompair.swift in Sources */,
 				02AFA15129BE9F1700E82A50 /* Saved.swift in Sources */,
 				C50A4C5C29CC803E00269573 /* CameraView.swift in Sources */,
+				C5487D5D29E9DCA0007B427B /* ImageClassifier.swift in Sources */,
 				02234B4429BB461D000DDE48 /* Components.swift in Sources */,
 				C553C8E629B8E7590014AA98 /* ShopTilYouDropApp.swift in Sources */,
 				C549B49829E83BFC00A09BAD /* CameraModel.swift in Sources */,
@@ -262,6 +358,7 @@
 				C5E8089829E6150E00872242 /* Scan.swift in Sources */,
 				C5E8089B29E6156D00872242 /* LibraryPicker.swift in Sources */,
 				020F475429D625B500A99C66 /* FireDBHelper.swift in Sources */,
+				C559303629E9D68E0024F2DB /* MobileNetV2.mlmodel in Sources */,
 				020F475629D625C600A99C66 /* User.swift in Sources */,
 				02AD927029DCC0E500269CA6 /* APICall.swift in Sources */,
 				02AD927229DCCC4900269CA6 /* API.swift in Sources */,
@@ -388,6 +485,7 @@
 		};
 		C553C8F129B8E75B0014AA98 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6275084D285B6E9DC71E49E6 /* Pods-ShopTilYouDrop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -420,6 +518,7 @@
 		};
 		C553C8F229B8E75B0014AA98 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76E48677AFF4715F9FE9A976 /* Pods-ShopTilYouDrop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -482,7 +581,7 @@
 				kind = branch;
 			};
 		};
-		4D4BE23729DE1C0C009AC911 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+		4D4BE23729DE1C0C009AC911 /* XCRemoteSwiftPackageReference "swift-algorithms.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-algorithms.git";
 			requirement = {
@@ -510,7 +609,7 @@
 		};
 		4D4BE23829DE1C0C009AC911 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4D4BE23729DE1C0C009AC911 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			package = 4D4BE23729DE1C0C009AC911 /* XCRemoteSwiftPackageReference "swift-algorithms.git" */;
 			productName = Algorithms;
 		};
 /* End XCSwiftPackageProductDependency section */

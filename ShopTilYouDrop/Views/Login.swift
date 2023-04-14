@@ -20,14 +20,16 @@ import FirebaseAuth
         @State private var showingAlert = false
         @State private var msg = ""
         
+        @ObservedObject var classifier: ImageClassifier
+        
         
         var body: some View {
             
                 VStack(spacing: 30){
                     
-                    NavigationLink(destination: Register(), tag: 1, selection: self.$selection){}
+                    NavigationLink(destination: Register(classifier: classifier), tag: 1, selection: self.$selection){}
                     
-                    NavigationLink(destination: Homepage(), tag: 2, selection: self.$selection){}
+                    NavigationLink(destination: Homepage(classifier: classifier), tag: 2, selection: self.$selection){}
 
                     
                     Spacer()
@@ -113,10 +115,10 @@ import FirebaseAuth
     }
     
     
-    struct Login_Previews: PreviewProvider {
-        static var previews: some View {
-            Login()
-        }
-    }
-    
+//    struct Login_Previews: PreviewProvider {
+//        static var previews: some View {
+//            Login()
+//        }
+//    }
+//    
 

@@ -15,6 +15,7 @@ struct ShopTilYouDropApp: App {
     
     let fireDBHelper = FireDBHelper()
     let productDataQuery = ProductQueryController()
+    let classifier = ImageClassifier()
     
     init() {
         FirebaseApp.configure()
@@ -24,7 +25,7 @@ struct ShopTilYouDropApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(fireDBHelper).environmentObject(productDataQuery)
+            ContentView(classifier: classifier).environmentObject(fireDBHelper).environmentObject(productDataQuery).environmentObject(classifier)
         }
     }
 }

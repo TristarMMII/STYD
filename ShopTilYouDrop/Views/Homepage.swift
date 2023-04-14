@@ -12,6 +12,8 @@ struct Homepage: View {
     @State private var isShowingMenu = false
     @State private var menuWidth: CGFloat = 0
     
+    @ObservedObject var classifier: ImageClassifier
+    
     
     var body: some View {
         
@@ -23,7 +25,7 @@ struct Homepage: View {
                 
                 TabView() {
                     
-                    Scan()
+                    Scan(classifier: classifier)
                         .tabItem {
                             Image(systemName: "camera.fill")
                             Text("Scan")
@@ -118,7 +120,7 @@ struct Homepage: View {
         }
         
                     .navigationBarItems(trailing:
-                        NavigationLink(destination: Settings()) {
+                        NavigationLink(destination: Settings(classifier: classifier)) {
                             Image(systemName: "gearshape.fill")
                         }
                     )
@@ -141,8 +143,8 @@ struct Homepage: View {
     }
 }
 
-struct Homepage_Previews: PreviewProvider {
-    static var previews: some View {
-        Homepage()
-    }
-}
+//struct Homepage_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Homepage()
+//    }
+//}
