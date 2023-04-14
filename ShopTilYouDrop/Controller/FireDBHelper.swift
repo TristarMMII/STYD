@@ -26,6 +26,16 @@ class FireDBHelper: ObservableObject {
         
     }
     
+    func addWishlistData(product: Product.Datum){
+        let db = Firestore.firestore()
+        let data = db.collection("UserData").document(Auth.auth().currentUser!.uid)
+        data.updateData(["Wishlist": FieldValue.arrayUnion([product.product_title!])]) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     
     
     

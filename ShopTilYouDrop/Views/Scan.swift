@@ -26,10 +26,7 @@ struct Scan: View {
     var body: some View {
 
 
-
         VStack{
-
-            
 
             Text("Shop Till You Drop")
                 .font(.title2)

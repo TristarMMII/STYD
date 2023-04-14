@@ -13,14 +13,33 @@ struct ProductsDetailPage: View {
     
     var product : Product.Datum
     @State private var isFavorite = false
+    let fireDBHelper = FireDBHelper()
     
     var body: some View {
         ScrollView(.vertical){
             VStack {
                 HStack {
+                    
                     Text(product.product_title ?? "No Data")
                         .padding()
                         .font(.largeTitle)
+                    
+                    
+                    Button(action : {
+                        
+                        fireDBHelper.addWishlistData(product: self.product)
+                        
+                    }){ Image(systemName: "heart.fill")
+                        .font(.largeTitle)}
+                    .cornerRadius(10)
+                    
+                    Text("Save")
+                    
+                }
+                
+                .onTapGesture {
+                    
+                }
                     
                     Spacer(minLength: 10)
                 }
@@ -70,6 +89,11 @@ struct ProductsDetailPage: View {
                     .padding()
                     
                     
+                    HStack{
+                        
+
+                    
+                }
                     
                     Text(product.product_description ?? "No Data")
                         .font(.body)
@@ -108,7 +132,7 @@ struct ProductsDetailPage: View {
                 }
             }
         }
-    }
+    
     
     struct ProductsDetailPage_Previews: PreviewProvider {
         static var previews: some View {
