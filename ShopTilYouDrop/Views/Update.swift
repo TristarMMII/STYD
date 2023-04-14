@@ -18,13 +18,14 @@ struct Update: View {
     @State private var showingAlert = false
     @State private var msg = ""
     
+    @ObservedObject var classifier: ImageClassifier
     
     var body: some View {
         
         VStack(spacing: 30){
             
             
-            NavigationLink(destination: Homepage(), tag: 2, selection: self.$selection){}
+            NavigationLink(destination: Homepage(classifier: classifier), tag: 2, selection: self.$selection){}
             
             
             Spacer()
@@ -109,9 +110,9 @@ struct Update: View {
 }
 
 
-
-struct Update_Previews: PreviewProvider {
-    static var previews: some View {
-        Update()
-    }
-}
+//
+//struct Update_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Update()
+//    }
+//}

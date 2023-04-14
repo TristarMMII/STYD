@@ -119,9 +119,9 @@ struct Scan: View {
 
                                 classifier.detect(uiImage: profileImage!)
 //
-//                                if let imageClass = classifier.imageClass {
-//                                    print(imageClass)
-//                                }
+                                if let imageClass = classifier.imageClass {
+                                    print(imageClass)
+                                }
                             }
                 
                 

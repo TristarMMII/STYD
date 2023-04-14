@@ -18,8 +18,7 @@ struct Settings: View {
     var body: some View {
         VStack{
             
-            NavigationLink(destination: Login(), tag: 1, selection: self.$selection){}
-            NavigationLink(destination: Update(), tag: 2, selection: self.$selection){}
+            NavigationLink(destination: Update(classifier: classifier), tag: 2, selection: self.$selection){}
             NavigationLink(destination: Login(classifier: classifier), tag: 1, selection: self.$selection){}
             
             VStack{
