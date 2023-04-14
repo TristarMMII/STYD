@@ -16,16 +16,19 @@ struct ProductsDetailPage: View {
             VStack {
                 HStack {
                     Text(product.product_title ?? "No Data")
+                        .padding()
                         .font(.largeTitle)
-                        .bold()
                     
                     Spacer(minLength: 10)
                 }
+                
+                Divider()
                 
                 ScrollView(.horizontal) {
                     HStack(spacing: 10) {
                         ForEach(product.product_photos ?? ["https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled.png"], id: \.self) { imageURLString in
                             AsyncImage(url: URL(string: imageURLString)!)
+                                .aspectRatio(contentMode: .fit)
                                 .frame(width: 150, height: 150)
                                 .background(Color.gray)
                                 .cornerRadius(10)
@@ -33,21 +36,23 @@ struct ProductsDetailPage: View {
                     }
                     .padding()
                 }
-                Divider()
+                
                 
                 VStack(alignment: .leading, spacing: 10) {
                     Text(String(format: "%.1f", product.product_rating ?? 0))
                         .font(.title)
                         .fontWeight(.semibold)
                     
+                    Text("Typical Price Range: \(product.typical_price_range?[0] ?? "") - \(product.typical_price_range?[1] ?? "")")
+                        .font(.body)
+                        .foregroundColor(.gray)
+                    
                     Text(product.product_description ?? "No Data")
                         .font(.body)
                         .multilineTextAlignment(.leading)
                         .fixedSize(horizontal: false, vertical: true)
                     
-                    Text("Typical Price Range: \(product.typical_price_range?[0] ?? "") - \(product.typical_price_range?[1] ?? "")")
-                        .font(.body)
-                        .foregroundColor(.gray)
+                    
                     
                     Spacer()
                     
