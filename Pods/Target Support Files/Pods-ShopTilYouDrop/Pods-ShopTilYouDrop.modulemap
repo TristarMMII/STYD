@@ -1,0 +1,6 @@
+framework module Pods_ShopTilYouDrop {
+  umbrella header "Pods-ShopTilYouDrop-umbrella.h"
+
+  export *
+  module * { export * }
+}

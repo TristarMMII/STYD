@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-ShopTilYouDrop/Pods-ShopTilYouDrop-resources.sh
+${PODS_CONFIGURATION_BUILD_DIR}/MLKitImageLabeling/MLKitImageLabelingResources.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/MLKitObjectDetectionCommon/MLKitObjectDetectionCommonResources.bundle

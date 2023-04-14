@@ -25,7 +25,7 @@ struct Homepage: View {
                 
                 TabView() {
                     
-                    Scan(classifier: classifier)
+                    Scan()
                         .tabItem {
                             Image(systemName: "camera.fill")
                             Text("Scan")
