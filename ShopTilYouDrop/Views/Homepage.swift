@@ -30,7 +30,7 @@ struct Homepage: View {
                             
                         }
                     
-                    Search(productList: [])
+                    Search()
                         .tabItem {
                             Image(systemName: "magnifyingglass")
                             Text("Search")
