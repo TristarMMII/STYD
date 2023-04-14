@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct ProductCompair: View {
     let productName: String
     let productIndex: Int
@@ -52,6 +54,9 @@ struct ProductCompair: View {
                                 destination: ProductsDetailPage(product: data)
                             ) {
                                 Text(data.product_title ?? "No Data")
+                                Spacer()
+                                Spacer()
+                                Text("\(data.typical_price_range?[0] ?? "$0.0") - \(data.typical_price_range?[1] ?? "$0.0")")
                                 //since this is the comparison page show the price range and let the user then go into the details page to show the entire details of the product they might be interested in
                             }
                         }
