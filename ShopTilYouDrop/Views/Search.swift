@@ -154,18 +154,6 @@ struct Search: View {
                                         if !isLoading {
                                             self.selectedProduct = currentProduct
                                             self.currentIndex = index
-//                                            productHelper.getSpecificProductData(index: index) { result in
-//                                                switch result {
-//                                                case .success(let data):
-//                                                    print("Received product data: \(data)")
-//                                                    self.product.data.append(data)
-//
-//                                                case .failure(let error):
-//                                                    print("Error fetching product data: \(error)")
-//                                                    productList.remove(at: index)
-//                                                }
-//                                            }
-
                                             self.selection = 1
                                         }
                                     }
