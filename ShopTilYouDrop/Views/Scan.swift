@@ -25,7 +25,7 @@ struct Scan: View {
     @State private var showPicker : Bool = false
     @State private var isUsingCamera : Bool = false
     
-    @ObservedObject var classifier: ImageClassifier
+    @ObservedObject var classifier: ImageClassifier = ImageClassifier()
     
     
    
@@ -120,9 +120,9 @@ struct Scan: View {
 
                                 classifier.detect(uiImage: profileImage!)
 //
-                                if let imageClass = classifier.imageClass {
-                                    print(imageClass)
-                                }
+//                                if let imageClass = classifier.imageClass {
+//                                    print(imageClass)
+//                                }
                             }
                 
                 
