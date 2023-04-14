@@ -6,15 +6,17 @@ struct ContentView: View {
     @State private var maxWidth: CGFloat = .zero
     @State private var selection: Int? = nil
     
+    @ObservedObject var classifier: ImageClassifier
+    
     var body: some View {
 
         NavigationView {
             
             VStack{
                 
-                NavigationLink(destination: Login(), tag: 1, selection: self.$selection){}
+                NavigationLink(destination: Login(classifier: classifier), tag: 1, selection: self.$selection){}
 
-                NavigationLink(destination: Register(), tag: 2, selection: self.$selection){}
+                NavigationLink(destination: Register(classifier: classifier), tag: 2, selection: self.$selection){}
                 
                 Spacer()
                 
@@ -87,8 +89,8 @@ private func rectReader(_ binding: Binding<CGFloat>) -> some View {
         }
     }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

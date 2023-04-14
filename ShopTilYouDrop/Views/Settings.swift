@@ -13,11 +13,14 @@ struct Settings: View {
     @State private var notiOn = true
     @State private var selection: Int? = nil
     
+    @ObservedObject var classifier: ImageClassifier
+    
     var body: some View {
         VStack{
             
             NavigationLink(destination: Login(), tag: 1, selection: self.$selection){}
             NavigationLink(destination: Update(), tag: 2, selection: self.$selection){}
+            NavigationLink(destination: Login(classifier: classifier), tag: 1, selection: self.$selection){}
             
             VStack{
                 Image(systemName: "gearshape.fill")
@@ -90,8 +93,8 @@ struct Settings: View {
     
 }//main view
 
-struct Settings_Previews: PreviewProvider {
-    static var previews: some View {
-        Settings()
-    }
-}
+//struct Settings_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Settings()
+//    }
+//}

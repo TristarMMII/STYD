@@ -18,12 +18,13 @@ struct Register: View {
     @State private var showingAlert = false
     @State private var msg = ""
     
+    @ObservedObject var classifier: ImageClassifier
     
     var body: some View {
         
             VStack(spacing: 30){
                 
-                NavigationLink(destination: Login(), tag: 1, selection: self.$selection){}
+                NavigationLink(destination: Login(classifier: classifier), tag: 1, selection: self.$selection){}
                 
 
                 
@@ -113,8 +114,8 @@ struct Register: View {
 
 
 
-struct Register_Previews: PreviewProvider {
-    static var previews: some View {
-        Register()
-    }
-}
+//struct Register_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Register()
+//    }
+//}

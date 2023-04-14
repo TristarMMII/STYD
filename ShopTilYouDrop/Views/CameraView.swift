@@ -10,6 +10,8 @@ import AVFoundation
 
 struct CameraView: View {
     
+    @ObservedObject var classifier: ImageClassifier
+    
     @StateObject var camera = CameraModel()
     @State public var selection: Int? = nil
     @State private var showingAlert = false
@@ -22,7 +24,7 @@ struct CameraView: View {
             
             VStack{
                 
-                NavigationLink(destination: Scan(), tag: 1, selection: self.$selection){}
+                NavigationLink(destination: Scan(classifier: classifier), tag: 1, selection: self.$selection){}
                 
                 Spacer()
                 
@@ -120,8 +122,8 @@ struct CameraPreview: UIViewRepresentable{
     }
 }
 
-struct CameraView_Previews: PreviewProvider {
-    static var previews: some View {
-        CameraView()
-    }
-}
+//struct CameraView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CameraView()
+//    }
+//}
