@@ -26,7 +26,7 @@ class CameraModel: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate{
     //picture data
     @Published var isSaved = false
     
-    @Published var  picData = Data(count: 0)
+    @Published var picData = Data(count: 0)
     
     func CheckPermissions(){
         //check permissions
