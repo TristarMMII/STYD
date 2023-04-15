@@ -110,12 +110,6 @@ struct Search: View {
                                     
                                     Spacer().lineLimit(5)
                                     
-                                    Button(action : {}){ Image(systemName: "heart").font(.largeTitle).foregroundColor(Color.white)}
-                                    .background(Color.blue)
-                                    .cornerRadius(10)
-                                    .onTapGesture {
-                                        
-                                    }
                                     
                                     Button(action : {}){ Image(systemName: "trash").font(.largeTitle).foregroundColor(Color.white)}
                                     .background(Color.red)

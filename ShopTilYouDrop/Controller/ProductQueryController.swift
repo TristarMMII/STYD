@@ -24,7 +24,7 @@ class ProductQueryController : ObservableObject {
     
     func fetchProductData(for product: String, completion: @escaping (Result<Product, Error>) -> Void) {
         
-        let headers = [            "X-RapidAPI-Key": "38f6a0f947mshfdb5e87b243e4d9p13bea8jsn642635524b26",            "X-RapidAPI-Host": "real-time-product-search.p.rapidapi.com"        ]
+        let headers = [            "X-RapidAPI-Key": "f78ec949c9msh56530a588aa61f8p1a1246jsn843e6d48ab6f",            "X-RapidAPI-Host": "real-time-product-search.p.rapidapi.com"        ]
         
         guard let url = URL(string: "https://real-time-product-search.p.rapidapi.com/search?q=\(product)&country=us&language=en") else {
             completion(.failure(NetworkError.invalidURL))

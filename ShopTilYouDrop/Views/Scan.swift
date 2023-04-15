@@ -11,11 +11,7 @@ import PhotosUI
 import UIKit
 
 
-
-
 struct Scan: View {
-
-    
     
     @State private var selection: Int? = nil
 
