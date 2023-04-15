@@ -122,6 +122,7 @@ struct Scan: View {
                                 if let imageClass = classifier.imageClass {
                                     print(imageClass)
                                 }
+                                showingSheet.toggle()
                             }
                 
                 
@@ -134,13 +135,18 @@ struct Scan: View {
                                 .background(Color.blue)
                                 .cornerRadius(7)
                         }
+                        .sheet(isPresented: $showingSheet) {
+                            SheetView(product: classifier.imageClass ?? "N/A")
+                        }
+
+
             
-            Button("Show Sheet") {
-                        showingSheet.toggle()
-                    }
-                    .sheet(isPresented: $showingSheet) {
-                        SheetView()
-                    }
+//            Button("Show Sheet") {
+//                        showingSheet.toggle()
+//                    }
+//                    .sheet(isPresented: $showingSheet) {
+//                        SheetView()
+//                    }
 
             
 
@@ -202,15 +208,56 @@ struct Scan: View {
 
 struct SheetView: View {
     @Environment(\.dismiss) var dismiss
+    @State private var selection: Int? = nil
+    var product : String
+    
 
     var body: some View {
-        Button("Press to dismiss") {
-            dismiss()
+        
+        
+        
+        NavigationView{
+            VStack{
+                NavigationLink(destination: Search(productList: [], searchProduct: product), tag: 2, selection: self.$selection){}
+                
+                Spacer()
+                
+                Text("Confirm Scan Results")
+                    .font(.largeTitle)
+                
+                Spacer()
+                
+                Text(product)
+                    .font(.title)
+                
+                HStack{
+                    Button(action:{
+                        dismiss()
+                    }){
+                        Image(systemName: "xmark.circle")
+                            .font(.largeTitle)
+                    }
+                    Button(action:{
+                        
+                        selection = 2
+                        print("WHY")
+                    }){
+                        Image(systemName: "checkmark.circle")
+                            .font(.largeTitle)
+                        
+                    }
+                    
+                }
+                
+                Spacer()
+            }//vstack
         }
-        .font(.title)
-        .padding()
-        .background(.black)
-    }
+        }
+        
+    
+//    func confirmProduct(){
+//        return true
+//    }
 }
 
 //class MainViewController: UIViewController {
