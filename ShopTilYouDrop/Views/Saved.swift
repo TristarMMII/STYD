@@ -22,9 +22,9 @@ struct WishListItem: Identifiable {
 
 struct Saved: View {
     
-    @State var items : [String] = []
     @State var wishlistItems = [WishListItem]()
-    @State private var hasAppeared = false
+    @State public var check = false
+
     
 //    func fetchItems() {
 //        guard let userId = Auth.auth().currentUser?.uid else {
@@ -63,8 +63,9 @@ struct Saved: View {
                     let productRating = item["product_rating"] as? Double ?? 0.0
                     let typicalPriceRange = item["typical_price_range"] as? [String] ?? []
                     
-                    // Do something with the data, e.g. add it to an array
-                    let wishlistItem = WishListItem(id: 5, productId: productId, productTitle: productTitle, productDescription: productDescription, productPhotos: productPhotos, productRating: productRating, typicalPriceRange: typicalPriceRange)
+                    
+
+                    let wishlistItem = WishListItem(id: 0, productId: productId, productTitle: productTitle, productDescription: productDescription, productPhotos: productPhotos, productRating: productRating, typicalPriceRange: typicalPriceRange)
                     self.wishlistItems.append(wishlistItem)
                 }
             
@@ -76,20 +77,35 @@ struct Saved: View {
 
     
     func removeItems(at offsets: IndexSet) {
-        self.items.remove(atOffsets: offsets)
+        self.wishlistItems.remove(atOffsets: offsets)
         
         guard let userId = Auth.auth().currentUser?.uid else {
             print("Error: User is not signed in.")
             return
         }
         
-        let data = ["Wishlist": self.items]
+        var wishlist = [[String: Any]]()
+        for item in wishlistItems {
+            wishlist.append([
+                "product_id": item.productId,
+                "product_title": item.productTitle,
+                "product_description": item.productDescription,
+                "product_photos": item.productPhotos,
+                "product_rating": item.productRating,
+                "typical_price_range": item.typicalPriceRange
+            ])
+        }
+        
+        let data = ["Wishlist": wishlist]
         Firestore.firestore().collection("UserData").document(userId).setData(data, merge: true) { error in
             if let error = error {
                 print("Error updating document: \(error.localizedDescription)")
+            } else {
+                print("Document updated successfully")
             }
         }
     }
+
 
     
     var body: some View {
@@ -108,26 +124,31 @@ struct Saved: View {
             }
             
             List {
-                    ForEach(wishlistItems, id: \.productId) { item in
-                            VStack(alignment: .leading) {
-                                NavigationLink(destination: ProductDetail(product: item)) {
-                                    Text(item.productTitle)
-                               }
-                            }
+                ForEach(wishlistItems, id: \.productId) { item in
+                    VStack(alignment: .leading) {
+                        NavigationLink(destination: ProductDetail(product: item)) {
+                            Text(item.productTitle)
                         }
                     }
-                        
-                .onAppear {
-                    if !hasAppeared {
-                    fetchWishlistData()
-                    hasAppeared = true
-                }
                     
                 }
+                
+                .onDelete(perform: removeItems)
+                
+            }
+                .onAppear {
+                    if !check{
+                        fetchWishlistData()
+                    }
+                    check = true
+                }
+                    
+        }
+                
         }
         
     }
-}
+
 
 struct ProductDetail: View {
     
@@ -138,12 +159,98 @@ struct ProductDetail: View {
         ScrollView(.vertical){
             VStack {
                 HStack {
-                    Text(product.productTitle ?? "No Data")
+                    
+                    Text(product.productTitle )
                         .padding()
                         .font(.largeTitle)
+                    
                 }
-            }
-        }
+                
+                .onTapGesture {
+                    
+                }
+                    
+                    Spacer(minLength: 10)
+                }
+                
+                Divider()
+                
+                ScrollView(.horizontal) {
+                    HStack(spacing: 10) {
+                        ForEach(product.productPhotos , id: \.self) { imageURLString in
+                            AsyncImage(url: URL(string: imageURLString)!)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 150, height: 150)
+                                .background(Color.gray)
+                                .cornerRadius(10)
+                        }
+                    }
+                    .padding()
+                }
+                
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    
+                    
+                    
+                    HStack(spacing: 50){
+                        Text(String(format: "%.1f", product.productRating))
+                            .font(.title)
+                            .fontWeight(.semibold)
+                        
+                    }
+                    .padding()
+                    
+                    HStack(spacing: 50){
+                        Text("Typical Price Range: \(product.typicalPriceRange[0] ) - \(product.typicalPriceRange[1] )")
+                            .font(.body)
+                            .foregroundColor(.gray)
+                        
+                    }
+                    .padding()
+                    
+                    
+                    HStack{
+                        
+                    
+                }
+                    
+                    Text(product.productDescription )
+                        .font(.body)
+                        .multilineTextAlignment(.leading)
+                        .fixedSize(horizontal: false, vertical: true)
+                    
+                    
+                    
+                    Spacer()
+                    
+//                    if(product.offer.store_reviews_page_url != nil){
+//                        HStack {
+//                            Text("\(product.offer.store_name)")
+//
+//                            Spacer()
+//
+//                            if let offerPageURL = URL(string: product.offer.offer_page_url!), UIApplication.shared.canOpenURL(offerPageURL) {
+//                                Link(destination: offerPageURL) {
+//                                    Text("Buy Now")
+//                                        .font(.headline)
+//                                        .foregroundColor(.white)
+//                                        .padding(.horizontal, 20)
+//                                        .padding(.vertical, 10)
+//                                        .background(Color.green)
+//                                        .cornerRadius(10)
+//                                }
+//                            } else {
+//                                Text("Invalid URL")
+//                            }
+//
+//                                Spacer()
+//                            }
+//                            .padding(.vertical, 10)
+//                        }
+                    
+                    }
+                }
     }
     }
 

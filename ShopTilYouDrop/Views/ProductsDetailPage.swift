@@ -14,6 +14,7 @@ struct ProductsDetailPage: View {
     var product : Product.Datum
     @State private var isFavorite = false
     let fireDBHelper = FireDBHelper()
+    var savedInstance = Saved()
     
     var body: some View {
         ScrollView(.vertical){
@@ -42,8 +43,8 @@ struct ProductsDetailPage: View {
                 }
                     
                     Spacer(minLength: 10)
-                }
-                
+            }
+            
                 Divider()
                 
                 ScrollView(.horizontal) {
