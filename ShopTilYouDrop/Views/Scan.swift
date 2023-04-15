@@ -27,7 +27,7 @@ struct Scan: View {
     
     @ObservedObject var classifier: ImageClassifier = ImageClassifier()
     
-    
+    @State private var showingSheet : Bool = false
    
 
     var body: some View {
@@ -135,6 +135,14 @@ struct Scan: View {
                                 .cornerRadius(7)
                         }
             
+            Button("Show Sheet") {
+                        showingSheet.toggle()
+                    }
+                    .sheet(isPresented: $showingSheet) {
+                        SheetView()
+                    }
+
+            
 
 
             Spacer()
@@ -158,6 +166,8 @@ struct Scan: View {
                 checkPermissions()
             }//.onAppear
     }
+    
+    
 
     private func checkPermissions(){
         switch PHPhotoLibrary.authorizationStatus(){
@@ -187,6 +197,19 @@ struct Scan: View {
                 return
             }
         }
+    }
+}
+
+struct SheetView: View {
+    @Environment(\.dismiss) var dismiss
+
+    var body: some View {
+        Button("Press to dismiss") {
+            dismiss()
+        }
+        .font(.title)
+        .padding()
+        .background(.black)
     }
 }
 
