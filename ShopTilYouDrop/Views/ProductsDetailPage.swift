@@ -14,7 +14,8 @@ struct ProductsDetailPage: View {
     var product : Product.Datum
     @State private var isFavorite = false
     let fireDBHelper = FireDBHelper()
-    var savedInstance = Saved()
+    @State private var showingAlert = false
+    @State private var msg = ""
     
     var body: some View {
         ScrollView(.vertical){
@@ -24,17 +25,7 @@ struct ProductsDetailPage: View {
                     Text(product.product_title ?? "No Data")
                         .padding()
                         .font(.largeTitle)
-                    
-                    
-                    Button(action : {
-                        
-                        fireDBHelper.addWishlistData(product: self.product)
-                        
-                    }){ Image(systemName: "heart.fill")
-                        .font(.largeTitle)}
-                    .cornerRadius(10)
-                    
-                    Text("Save")
+
                     
                 }
                 
@@ -86,6 +77,20 @@ struct ProductsDetailPage: View {
                             Text("On-Sale!")
                                 .foregroundColor(.red)
                         }
+                        
+                        VStack(){
+                            
+                            Button(action : {
+                                fireDBHelper.addWishlistData(product: self.product)
+                                showingAlert = true
+                                msg = "Product added to Wishlist!"
+                            }){ Image(systemName: "heart.fill")
+                                .font(.largeTitle)}
+                            Text("Save")
+                        }
+                        .alert(self.msg, isPresented: $showingAlert) {
+                                    Button("OK", role: .cancel) { }
+                                }
                     }
                     .padding()
                     

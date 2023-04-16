@@ -24,6 +24,8 @@ class FireDBHelper: ObservableObject {
         }
         
     }
+
+    
     
     func addWishlistData(product: Product.Datum){
         let db = Firestore.firestore()

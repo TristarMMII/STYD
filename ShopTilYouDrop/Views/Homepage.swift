@@ -41,7 +41,7 @@ struct Homepage: View {
                     Saved()
                         .tabItem {
                             Image(systemName: "heart.fill")
-                            Text("Saved")
+                            Text("Wishlist")
                             
                         }
                     
@@ -96,17 +96,7 @@ struct Homepage: View {
 
                         Spacer()
                         
-                        Button(action: {
-                            // Perform an action when the button is tapped
-                            print("Menu Item 3 Tapped")
-                        }) {
-                            HStack {
-                                Image(systemName: "lock.fill")
-                                    .foregroundColor(.blue)
-                                Text("Update Information")
-                            }
-                        }
-                        .padding(.top, 20)
+      
                         
                     }
                     .frame(width: menuWidth)

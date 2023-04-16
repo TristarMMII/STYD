@@ -20,60 +20,44 @@ struct WishListItem: Identifiable {
 }
 
 
+
 struct Saved: View {
     
     @State var wishlistItems = [WishListItem]()
-    @State public var check = false
 
     
-//    func fetchItems() {
-//        guard let userId = Auth.auth().currentUser?.uid else {
-//            print("Error: User is not signed in.")
-//            return
-//        }
-//
-//        Firestore.firestore().collection("UserData").getDocuments { snapshot, error in
-//               if let documents = snapshot?.documents {
-//                   self.items = []
-//                   for document in documents {
-//                       let documentId = document.documentID
-//                       if documentId == userId, let items = document.data()["Wishlist"] as? [String] {
-//                           self.items += items
-//                       }
-//                   }
-//               } else if let error = error {
-//                   print("Error fetching documents: \(error.localizedDescription)")
-//               }
-//           }
-//       }
-    
-    func fetchWishlistData() {
-        guard let userId = Auth.auth().currentUser?.uid else {
-            print("Error: User is not signed in.")
-            return
-        }
-        
-        Firestore.firestore().collection("UserData").document(userId).getDocument { snapshot, error in
-            if let documentData = snapshot?.data(), let wishlist = documentData["Wishlist"] as? [[String: Any]] {
-                for item in wishlist {
-                    let productId = item["product_id"] as? String ?? ""
-                    let productTitle = item["product_title"] as? String ?? ""
-                    let productDescription = item["product_description"] as? String ?? ""
-                    let productPhotos = item["product_photos"] as? [String] ?? []
-                    let productRating = item["product_rating"] as? Double ?? 0.0
-                    let typicalPriceRange = item["typical_price_range"] as? [String] ?? []
-                    
-                    
-
-                    let wishlistItem = WishListItem(id: 0, productId: productId, productTitle: productTitle, productDescription: productDescription, productPhotos: productPhotos, productRating: productRating, typicalPriceRange: typicalPriceRange)
-                    self.wishlistItems.append(wishlistItem)
-                }
+    func fetchWishlistData(){
+       
+            guard let userId = Auth.auth().currentUser?.uid else {
+                print("Error: User is not signed in.")
+                return
+            }
             
-            } else if let error = error {
-                print("Error fetching wishlist data: \(error.localizedDescription)")
+            Firestore.firestore().collection("UserData").document(userId).getDocument { snapshot, error in
+                if let documentData = snapshot?.data(), let wishlist = documentData["Wishlist"] as? [[String: Any]] {
+                    
+                    for item in wishlist {
+                        let productId = item["product_id"] as? String ?? ""
+                        let productTitle = item["product_title"] as? String ?? ""
+                        let productDescription = item["product_description"] as? String ?? ""
+                        let productPhotos = item["product_photos"] as? [String] ?? []
+                        let productRating = item["product_rating"] as? Double ?? 0.0
+                        let typicalPriceRange = item["typical_price_range"] as? [String] ?? []
+                        
+                        let wishlistItem = WishListItem(id: 0, productId: productId, productTitle: productTitle, productDescription: productDescription, productPhotos: productPhotos, productRating: productRating, typicalPriceRange: typicalPriceRange)
+                        
+                        if !self.wishlistItems.contains(where: { $0.productId == wishlistItem.productId }) {
+                            self.wishlistItems.append(wishlistItem)
+                        }
+                    }
+                    
+                } else if let error = error {
+                    print("Error fetching wishlist data: \(error.localizedDescription)")
+                }
             }
         }
-    }
+
+    
 
     
     func removeItems(at offsets: IndexSet) {
@@ -106,7 +90,6 @@ struct Saved: View {
         }
     }
 
-
     
     var body: some View {
         
@@ -137,12 +120,8 @@ struct Saved: View {
                 
             }
                 .onAppear {
-                    if !check{
                         fetchWishlistData()
                     }
-                    check = true
-                }
-                    
         }
                 
         }
@@ -163,6 +142,10 @@ struct ProductDetail: View {
                     Text(product.productTitle )
                         .padding()
                         .font(.largeTitle)
+                    
+        
+                    .cornerRadius(10)
+                    
                     
                 }
                 
@@ -198,6 +181,7 @@ struct ProductDetail: View {
                             .font(.title)
                             .fontWeight(.semibold)
                         
+                        
                     }
                     .padding()
                     
@@ -205,6 +189,7 @@ struct ProductDetail: View {
                         Text("Typical Price Range: \(product.typicalPriceRange[0] ) - \(product.typicalPriceRange[1] )")
                             .font(.body)
                             .foregroundColor(.gray)
+                        
                         
                     }
                     .padding()
@@ -224,30 +209,8 @@ struct ProductDetail: View {
                     
                     Spacer()
                     
-//                    if(product.offer.store_reviews_page_url != nil){
-//                        HStack {
-//                            Text("\(product.offer.store_name)")
-//
-//                            Spacer()
-//
-//                            if let offerPageURL = URL(string: product.offer.offer_page_url!), UIApplication.shared.canOpenURL(offerPageURL) {
-//                                Link(destination: offerPageURL) {
-//                                    Text("Buy Now")
-//                                        .font(.headline)
-//                                        .foregroundColor(.white)
-//                                        .padding(.horizontal, 20)
-//                                        .padding(.vertical, 10)
-//                                        .background(Color.green)
-//                                        .cornerRadius(10)
-//                                }
-//                            } else {
-//                                Text("Invalid URL")
-//                            }
-//
-//                                Spacer()
-//                            }
-//                            .padding(.vertical, 10)
-//                        }
+                            .padding(.vertical, 10)
+                        
                     
                     }
                 }
