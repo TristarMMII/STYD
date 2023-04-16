@@ -115,10 +115,10 @@ import FirebaseAuth
     }
     
     
-//    struct Login_Previews: PreviewProvider {
-//        static var previews: some View {
-//            Login()
-//        }
-//    }
-//    
+    struct Login_Previews: PreviewProvider {
+        static var previews: some View {
+            Login(classifier: ImageClassifier.init())
+        }
+    }
+    
 

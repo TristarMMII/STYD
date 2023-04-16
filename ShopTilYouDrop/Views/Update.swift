@@ -41,19 +41,19 @@ struct Update: View {
             VStack(spacing: 25){
                 TextField("Email", text: $email)
                     .padding(10)
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 0.5).frame(height: 45))
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 0.5).frame(width: 320, height: 45))
                     .multilineTextAlignment(.center)
                 
                 VStack(spacing:10){
                     SecureField("Password", text: $password)
                         .padding(10)
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 0.5).frame(height: 45))
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 0.5).frame(width: 320, height: 45))
                         .multilineTextAlignment(.center)
                     
                 }
             }
             
-            // SignIn
+           
             Button(action: {
                 updateEmail(newEmail: email)
                 updatePassword(newPassword: password)
@@ -62,7 +62,7 @@ struct Update: View {
                     .modifier(CustomTextM(fontName: "MavenPro-Bold", fontSize: 16, fontColor: Color.white))
                 
                     .frame(maxWidth: .infinity)
-                    .frame(height: 56, alignment: .leading)
+                    .frame(width: 320,height: 56, alignment: .leading)
                     .background(Color.blue)
                     .cornerRadius(10)
             }
@@ -110,9 +110,9 @@ struct Update: View {
 }
 
 
-//
-//struct Update_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Update()
-//    }
-//}
+
+struct Update_Previews: PreviewProvider {
+    static var previews: some View {
+        Update(classifier: ImageClassifier.init())
+    }
+}

@@ -97,7 +97,7 @@ struct Register: View {
                 showingAlert = true
                 msg = error!.localizedDescription
             } else {
-                Firestore.firestore().collection("UserData").document(Auth.auth().currentUser!.uid).setData(["Wishlist": ""])
+                Firestore.firestore().collection("UserData").document(Auth.auth().currentUser!.uid).setData(["Wishlist": "", "History": ""])
                 self.selection = 1
             }
             

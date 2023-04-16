@@ -134,8 +134,11 @@ struct ProductsDetailPage: View {
                             .padding(.vertical, 10)
                         }
                     }
-                }
-            }
+        }.onAppear {
+            fireDBHelper.addHistoryData(product: self.product)
+        }
+    }
+        
         }
     
     

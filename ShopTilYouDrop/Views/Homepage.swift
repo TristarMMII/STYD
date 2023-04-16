@@ -13,11 +13,15 @@ struct Homepage: View {
     @State private var menuWidth: CGFloat = 0
     
     @ObservedObject var classifier: ImageClassifier
+    @State private var selection: Int? = nil
     
     
     var body: some View {
         
+        NavigationLink(destination: History(product: Product.Datum(product_id: "", product_title: "Product Title", product_description: "Product description goes here. This is a sample text to show how it can be formatted.", product_photos: ["https://via.placeholder.com/150", "https://via.placeholder.com/150", "https://via.placeholder.com/150"], product_rating: 0, product_page_url: "", product_offers_page_url: "", product_specs_page_url: "", product_reviews_page_url: "", product_num_reviews: 0, typical_price_range: ["$200", "$300"], offer: Product.Offer(store_name: "Store Name", store_rating: 0, offer_page_url: "", store_review_count: 0, store_reviews_page_url: "", price: "", shipping: "", tax: "", on_sale: false, product_condition: ""))), tag: 1, selection: self.$selection){}
+        
         NavigationView {
+            
             
             ZStack(alignment: .leading) {
 
@@ -57,10 +61,9 @@ struct Homepage: View {
 
                     VStack(alignment: .leading) {
                         
-                        
                         Button(action: {
-                            // Perform an action when the button is tapped
-                            print("Menu Item 1 Tapped")
+                            self.selection = 1
+                            
                         }) {
                             HStack {
                                 Image(systemName: "list.clipboard.fill")

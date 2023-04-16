@@ -18,6 +18,7 @@
 		02234B4629BB4EEE000DDE48 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02234B4529BB4EEE000DDE48 /* Login.swift */; };
 		02234B4829BB52CB000DDE48 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02234B4729BB52CB000DDE48 /* Register.swift */; };
 		02234B4A29BB530D000DDE48 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02234B4929BB530D000DDE48 /* Homepage.swift */; };
+		0229395529EBDCBA00A7DBCE /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0229395429EBDCBA00A7DBCE /* History.swift */; };
 		02AD926E29DCC06600269CA6 /* ProductQueryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AD926D29DCC06600269CA6 /* ProductQueryController.swift */; };
 		02AD927029DCC0E500269CA6 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AD926F29DCC0E500269CA6 /* APICall.swift */; };
 		02AD927229DCCC4900269CA6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AD927129DCCC4900269CA6 /* API.swift */; };
@@ -50,6 +51,7 @@
 		02234B4529BB4EEE000DDE48 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		02234B4729BB52CB000DDE48 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		02234B4929BB530D000DDE48 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
+		0229395429EBDCBA00A7DBCE /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		02AD926D29DCC06600269CA6 /* ProductQueryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductQueryController.swift; sourceTree = "<group>"; };
 		02AD926F29DCC0E500269CA6 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		02AD927129DCCC4900269CA6 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				02AD926F29DCC0E500269CA6 /* APICall.swift */,
 				4D1DCF4E29E75B3600BF0C24 /* ProductsDetailPage.swift */,
 				020A7BA929E8487400C045EE /* Update.swift */,
+				0229395429EBDCBA00A7DBCE /* History.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				02234B4429BB461D000DDE48 /* Components.swift in Sources */,
 				C553C8E629B8E7590014AA98 /* ShopTilYouDropApp.swift in Sources */,
 				C549B49829E83BFC00A09BAD /* CameraModel.swift in Sources */,
+				0229395529EBDCBA00A7DBCE /* History.swift in Sources */,
 				02234B4A29BB530D000DDE48 /* Homepage.swift in Sources */,
 				C5E8E5BF29BEA5500030CDA1 /* Settings.swift in Sources */,
 				020A7BAA29E8487400C045EE /* Update.swift in Sources */,
