@@ -13,7 +13,7 @@ import SwiftUI
 struct Search: View {
     
     @State var productList : [String]
-    @State var searchProduct : String = ""
+    @State var searchProduct : String
     @State private var selection : Int? = nil
     @State private var selectedProduct : String = ""
     @State private var product : [Product] = [Product]()
@@ -275,8 +275,8 @@ struct Search: View {
 //    }
 //}
 
-struct Search_Previews: PreviewProvider {
-    static var previews: some View {
-        Search(productList: [""])
-    }
-}
+//struct Search_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Search(productList: [""])
+//    }
+//}
