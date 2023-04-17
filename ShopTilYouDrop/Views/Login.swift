@@ -13,8 +13,8 @@ import FirebaseAuth
 
     struct Login: View {
         
-        @State var email: String = "Test123@gmail.com"
-        @State var password: String = "123456"
+        @State var email: String = ""
+        @State var password: String = ""
         @State private var selection: Int? = nil
         @State private var userLoggedIn = false
         @State private var showingAlert = false
